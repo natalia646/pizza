@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 
-const PizzaBlock = () => {
+const PizzaBlock = ({ items }) => {
   const [pizzaCount, setPizzaCount] = useState(0);
 
   return (
-    <div className="pizza-block">
-      <img src="" alt="pizza"></img>
-      <h2>Pizza Neme</h2>
-      <button className="button-add" onClick={() => setPizzaCount(pizzaCount + 1)}>+ Add {pizzaCount}</button>
+    <div className="all-pizza-block">
+      {items.map((item) => (
+        <article key={item.id} className="pazza-article">
+          <h2>{item.title}</h2>
+          <img src={item.imageUrl} alt={item.title}></img>
+          <button
+            className="button-add"
+            onClick={() => setPizzaCount(pizzaCount + 1)}> + Add {pizzaCount}
+          </button>
+        </article>
+      ))}
     </div>
   );
 };
