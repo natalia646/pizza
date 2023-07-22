@@ -17,15 +17,18 @@ function App() {
   return (
     <div className="App">
       <Categories />
-      {items.map((item) => (
-        <PizzaBlock key={item.id}
-          id={item.id}
-          title={item.title}
-          image={item.imageUrl}
-          sizes={item.sizes}
-          types={item.types}
-        />
-      ))}
+
+    <div className="all-pizza-block">
+        {items.map((item) => (
+          <PizzaBlock key={item.id}
+            id={item.id}
+            title={item.title}
+            image={item.imageUrl}
+            sizes={item.sizes}
+            types={item.types}
+          />
+        ))}
+    </div>
     </div>
   );
 }

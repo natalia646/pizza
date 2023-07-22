@@ -1,10 +1,13 @@
+:root{
+    --head-color: rgb(238, 179, 107) ;
+}
 .categiries{
     display: flex;
     justify-content: flex-start;
     list-style: none;
 }
 .categories-list{
-    background-color: rgb(238, 179, 107);
+    background-color: var(--head-color);
     border-radius: 15px 16px 30px 0px;
     margin: 0 20px;
     font-size: 1.1em;
@@ -16,19 +19,38 @@
     background-color: black;
 }
 .button-add{
-    background-color: rgb(238, 179, 107);
+    background-color: var(--head-color);
     border-radius: 10%;
     padding: 10px 10px;
     border: none;
     cursor: pointer;
+
 }
 .all-pizza-block{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: var(--head-color);
+    margin: 10px 50px;
+
 }
 .pazza-article{
-    border: 1px solid;
+    margin: 10px 10px;
+    background-color: white;
+    border-radius: 2%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    min-width: 300px;
 }
 img{
     width: 200px;
+}
+.types-pizza{
+ 
+}
+.sizes-pizza{
+
 }
