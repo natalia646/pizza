@@ -24,6 +24,7 @@ const PizzaBlock = ({ id, title, image, sizes, types }) => {
       </article>
     </div>
   );
+  
 };
 
 export default PizzaBlock;
