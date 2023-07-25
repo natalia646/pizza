@@ -1,9 +1,10 @@
 import React from 'react'
 
+
 const Basket = () => {
   return (
     <div>
-      <button>Basket</button>
+      <h1>Basket</h1>
     </div>
   )
 }
