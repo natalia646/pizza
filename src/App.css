@@ -1,56 +1,78 @@
-:root{
-    --head-color: rgb(238, 179, 107) ;
+:root {
+  --head-color: rgb(238, 179, 107);
+  background-color: var(--head-color);
 }
-.categiries{
-    display: flex;
-    justify-content: flex-start;
-    list-style: none;
+.categiries {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
 }
-.categories-list{
-    background-color: var(--head-color);
-    border-radius: 15px 16px 30px 0px;
-    margin: 0 20px;
-    font-size: 1.1em;
-    padding: 10px 15px;
-    color: white;
-    cursor: pointer;
+.categories-list {
+  background-color: white;
+  border-radius: 15px 16px 30px 0px;
+  margin: 0 20px;
+  font-size: 1.1em;
+  padding: 10px 15px;
+  color: var(--head-color);
+  cursor: pointer;
 }
-.active{
-    background-color: black;
+.active {
+  background-color: rgb(0, 0, 0);
 }
-.button-add{
-    background-color: var(--head-color);
-    border-radius: 10%;
-    padding: 10px 10px;
-    border: none;
-    cursor: pointer;
+.button-add {
+  background-color: white;
+  border: 2px solid var(--head-color);
+  border-radius: 10%;
+  padding: 2px 25px;
+  cursor: pointer;
+  margin-left: 30px;
+}
+.all-pizza-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: white;
+  margin: 10px 50px;
+}
+.pazza-article {
+  margin: 10px 10px;
+  background-color: white;
+  border-radius: 2%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  min-width: 300px;
+}
+img {
+  width: 200px;
+}
+.li-size,
+.li-type {
+  list-style-type: none;
+  background-color: white;
+  padding: 0.2em;
+  margin: 0.5em;
+  border-radius: 8%;
+  min-width: 50px;
+  text-align: center;
+}
+.sizes-pizza,
+.types-pizza {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0%;
+  margin: 0.01em;
+}
 
+.pizza-sizes-and-types {
+  background-color: gainsboro;
+  border-radius: 5%;
+  min-width: 200px;
+  margin: 0.4em;
 }
-.all-pizza-block{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: var(--head-color);
-    margin: 10px 50px;
-
-}
-.pazza-article{
-    margin: 10px 10px;
-    background-color: white;
-    border-radius: 2%;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    min-width: 300px;
-}
-img{
-    width: 200px;
-}
-.types-pizza{
- 
-}
-.sizes-pizza{
-
+.price-brock {
+  display: flex;
 }
