@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Sort from "./Sort";
-import Basket from "./Basket";
 
 const Categories = () => {
   const [activeIndex, setActiveIndex] = useState(0);
