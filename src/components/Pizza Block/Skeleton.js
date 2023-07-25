@@ -3,6 +3,7 @@ import ContentLoader from "react-content-loader"
 
 const Skeleton = (props) => (
     <ContentLoader 
+    className="pazza-article"
     speed={2}
     width={320}
     height={432}
