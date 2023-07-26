@@ -5,8 +5,8 @@ import PizzaBlock from "../components/Pizza Block/PizzaBlock";
 import Skeleton from "../components/Pizza Block/Skeleton";
 import Categories from "../components/Heder/Categories";
 import Sort from "../components/Heder/Sort";
-import Basket from "../components/Heder/Basket";
-import Logo from "../components/Heder/Logo";
+import Basket from "./Basket";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [items, setItems] = useState([]);
@@ -23,11 +23,9 @@ const Home = () => {
 
   return (
     <main>
-
-      <div>
+      <div className="head">
         <Categories />
         <Sort />
-        <Basket />
       </div>
       <div className="all-pizza-block">
         {isLoading

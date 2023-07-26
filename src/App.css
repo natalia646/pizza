@@ -1,6 +1,6 @@
 :root {
-  --head-color: rgb(238, 179, 107);
-  --white-color: rgb(255, 255, 255);
+  --head-color: rgb(250, 220, 182);
+  --white-color: rgba(255, 255, 255, 0.837);
   background-color: var(--head-color);
 }
 .header{
@@ -16,7 +16,11 @@
   display: inline;
   border-radius: 50px ;
 }
-
+.head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .categiries {
   display: flex;
   justify-content: flex-start;
@@ -35,6 +39,7 @@
   background-color: var(--head-color);
   border: 2px solid black;
   background-color: rgba(255, 255, 255, 0.336);
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.36);
 
 }
 .button-add {
@@ -63,6 +68,7 @@
   align-items: center;
   flex-direction: column;
   min-width: 300px;
+  box-shadow: 10px 5px 5px rgba(1, 1, 0, 0.23);
 }
 img {
   width: 200px;
