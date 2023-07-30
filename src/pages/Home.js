@@ -14,7 +14,7 @@ const Home = () => {
 
   useEffect(() => {
     fetch(
-      "https://file.notion.so/f/s/36ad4e93-800e-451b-9831-ae6abe1b28ef/pizzas.json?id=e934efcc-4042-481d-9d73-76f227f1696e&table=block&spaceId=b3238354-86d5-4ba6-9ad7-eb01112a9acd&expirationTimestamp=1690358400000&signature=XuolSgK4D89B2UXWCqVs3h8HKnim7zETNY2iNvGg8O8&downloadName=pizzas.json"
+      "https://file.notion.so/f/s/36ad4e93-800e-451b-9831-ae6abe1b28ef/pizzas.json?id=e934efcc-4042-481d-9d73-76f227f1696e&table=block&spaceId=b3238354-86d5-4ba6-9ad7-eb01112a9acd&expirationTimestamp=1690804800000&signature=5NXmWLgI__yIqA3_gI2Zmg1TrisaYyiY6X4W1VcII1Q&downloadName=pizzas.json"
     )
       .then((res) => res.json())
       .then((data) => setItems(data));
@@ -22,11 +22,11 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
-      <div className="head">
+    <main className="main">
+       <div className="categor-and-sort">
         <Categories />
         <Sort />
-      </div>
+      </div> 
       <div className="all-pizza-block">
         {isLoading
           ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
