@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+
+
 const Categories = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const categiries = ["All", "Mead", "Fish", "Vegetarian", "Grensive", "Sharp"];

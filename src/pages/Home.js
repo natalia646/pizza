@@ -5,8 +5,7 @@ import PizzaBlock from "../components/Pizza Block/PizzaBlock";
 import Skeleton from "../components/Pizza Block/Skeleton";
 import Categories from "../components/Heder/Categories";
 import Sort from "../components/Heder/Sort";
-import Basket from "./Basket";
-import { Link } from "react-router-dom";
+
 
 const Home = () => {
   const [items, setItems] = useState([]);

@@ -1,10 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
+import styles from './scss/NotFoundBlock.module.scss'
+
 
 const NotFound = () => {
   return (
     <div>
-      <h1>Nothing found :( </h1>
+      <h1 className={styles.root}> Nothing found :( </h1>
       <Link to ='/'>go Home</Link>
     </div>
   )

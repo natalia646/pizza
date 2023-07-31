@@ -1,32 +1,34 @@
-import React, { useState } from "react";
+import React  from "react";
+import style from '../scss/PizzaBlock.module.scss'
+
 
 const PizzaBlock = ({ title, image, sizes, types, price }) => {
   const pizzaForm = ["тонкі", "стандартні"];
 
   return (
-    <article className="pazza-article">
+    <article className={style.article}>
       <img src={image} alt={title}></img>
       <h2>{title}</h2>
 
-      <div className="pizza-sizes-and-types">
-        <ul className="types-pizza">
+      <div className={style.sizes_types}>
+        <ul>
           {types.map((type) => (
-            <li className="li-type" key={type}>
+            <li key={type}>
               {pizzaForm[type]}
             </li>
           ))}
         </ul>
-        <ul className="sizes-pizza">
+        <ul>
           {sizes.map((size, i) => (
-            <li className="li-size" key={i}>
+            <li key={i}>
               {size}
             </li>
           ))}
         </ul>
       </div>
-      <div className="price-brock">
+      <div className={style.price}>
         <p>від {Math.round(price / 2)} грн.</p>
-        <button className="button-add">Add</button>
+        <button className={style.add}>Add</button>
       </div>
     </article>
   );
