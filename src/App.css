@@ -4,23 +4,12 @@
   --second-color: #411f04;
   background-color: var(--head-color);
 }
-.App {
+ .App {
   background-color: var(--white-color);
   margin: 10px 100px;
   border-radius: 1%;
 }
-.all-pizza-block {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.categor-and-sort {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 15px;
-}
+/*categories*/
 .categiries {
   display: flex;
   justify-content: flex-start;
@@ -45,3 +34,4 @@
   color: var(--white-color);
 }
 
+/**/

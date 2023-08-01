@@ -9,7 +9,7 @@ const Categories = () => {
   
   return (
     <div className="nav">
-      <ul className="categiries">
+      <ul className='categiries'>
         {categiries.map((categori, i) => (
           <li
             onClick={() => setActiveIndex(i)}
