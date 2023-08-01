@@ -8,7 +8,7 @@ const Categories = () => {
 
   
   return (
-    <div className="nav">
+    <div>
       <ul className='categiries'>
         {categiries.map((categori, i) => (
           <li

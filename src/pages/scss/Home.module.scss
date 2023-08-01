@@ -7,6 +7,20 @@
       grid-row-gap: 5px;
       margin-left: 9px;
       margin-right: 9px;
+
+      @media (max-width: 1400px){
+        grid-template-columns: repeat(3, 1fr);
+    
+      }
+      @media (max-width: 1000px){
+        grid-template-columns: repeat(2, 1fr);
+        
+
+        
+      }
+      @media (max-width:750px ){
+        grid-template-columns: repeat(1, 1fr);
+      }
   }
   .categories_block{
     display: flex;
@@ -14,4 +28,5 @@
     flex-wrap: wrap;
     align-items: center;
     padding: 15px;
+
   }
