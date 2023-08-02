@@ -27,7 +27,7 @@ const PizzaBlock = ({ title, image, sizes, types, price }) => {
         </ul>
       </div>
       <div className={style.price}>
-        <p>від {Math.round(price / 2)} грн.</p>
+        <p>{price} $</p>
         <button className={style.add}>Add</button>
       </div>
     </article>
