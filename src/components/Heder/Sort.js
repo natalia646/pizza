@@ -5,11 +5,11 @@ const Sort = () => {
     
   return (
     <div>
-        Sort <input list="sort"></input>
+        Sort by <input list="sort"></input>
         <datalist id="sort">
           <option value="Popular"></option>
-          <option value="From the greetings"></option>
-          <option value="From cheaper"></option>
+          <option value="Price low to high"></option>
+          <option value="Price high to low"></option>
         </datalist>
     </div>
   )
