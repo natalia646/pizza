@@ -1,16 +1,18 @@
 import React from 'react'
 
-const Sort = () => {
-
-    
+const Sort = ({clickSort}) => {
+  
+  
+  
   return (
     <div>
-        Sort by <input list="sort"></input>
-        <datalist id="sort">
-          <option value="Popular"></option>
-          <option value="Price low to high"></option>
-          <option value="Price high to low"></option>
-        </datalist>
+        Sort by
+        <select id="sort" onChange={(event)=>clickSort(event.target.value)}>
+        <option value=""></option>
+          <option value="rating&order=desc">Popular</option>
+          <option value='price&order=asc'>Price low to high</option>
+          <option value="rait'price&order=desc'ing">Price high to low</option>
+        </select>
     </div>
   )
 }

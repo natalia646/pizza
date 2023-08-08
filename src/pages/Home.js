@@ -13,23 +13,33 @@ const Home = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const [sotrValue, setSortValue] = useState('');
+  const [valueSearch, setValueSerch] = useState('')
+ console.log(valueSearch)
 
   useEffect(() => {
+    setLoading(true);
     fetch(
-      "https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items"
+       "https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items?search=" + valueSearch
+      // "https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items?category=" + activeIndex
+      // "https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items?sortBy=" + sotrValue
     )
       .then((res) => res.json())
       .then((data) => setItems(data));
     setLoading(false);
-  }, []);
+  }, [activeIndex, sotrValue, valueSearch]);
 
   return (
     <main>
        <div className={style.categories_block}>
-        <Categories activeIndex = {activeIndex} clickCategories = {(id)=>setActiveIndex(id)}/>
-        <Sort />
-        <Search/>
+        <Categories 
+          activeIndex = {activeIndex} 
+          clickCategories = {(id)=>setActiveIndex(id)}/>
+        <Sort 
+          clickSort ={(value) =>setSortValue(value)}/>
+        <Search 
+        valueSearch ={valueSearch} 
+        changeValueSerch ={(value)=>setValueSerch(value)}/>
       </div> 
       <div className={style.all_pizza}>
         {isLoading
