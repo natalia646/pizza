@@ -18,6 +18,7 @@ function Search({ valueSearch, changeValueSerch }) {
           onChange={(event) => changeValueSerch(event.target.value)}
         />
       )}
+      
     </div>
   );
 }
