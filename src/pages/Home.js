@@ -19,8 +19,8 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items?${activeIndex > 0 ? 'category=' + activeIndex : ''}  ${sotrValue? '&sortBy='+ sotrValue : ''}`
-      //  "https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items?search=" + valueSearch
+      // `https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items?${activeIndex > 0 ? 'category=' + activeIndex : ''}  ${sotrValue? '&sortBy='+ sotrValue : ''}`
+       "https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items?search=" + valueSearch
       // "https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items?category=" + activeIndex
       // "https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items?sortBy=" + sotrValue
     )
@@ -31,6 +31,9 @@ const Home = () => {
         });
   }, [activeIndex, sotrValue, valueSearch]);
 
+
+
+  
   return (
     <main>
        <div className={style.categories_block}>

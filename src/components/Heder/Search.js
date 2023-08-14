@@ -4,7 +4,7 @@ import lupa from '../assets/search.svg'
 
 function Search({ valueSearch, changeValueSerch }) {
   const [clickSearch, setClickSearch] = useState(false);
-  //  const [valueSearch, setValueSerch] = useState('')
+
 
   return (
     <div className={style.root}>
