@@ -1,8 +1,14 @@
-.lupa{
-    width: 30px;
-  }
-.search{
+
+.root{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.icon{
+width: 40px;
+}
+.input{
+ border-radius: 2%;
+ padding: 5px;
+ border:  1px solid rgba(0, 0, 0, 0.312);
 }
