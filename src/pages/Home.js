@@ -8,15 +8,30 @@ import Sort from "../components/Heder/Sort";
 import style from "./scss/Home.module.scss";
 import Search from "../components/Heder/Search";
 import axios from "axios";
+import {useSelector} from 'react-redux'
+
 
 const Home = () => {
+
+const activeIndex = useSelector((state) => state);
+
+console.log(activeIndex)
+
+
+
+const setActiveIndex = ()=>{}
+
+
+
+
   const [items, setItems] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  const [activeIndex, setActiveIndex] = useState(0);
+  // const [activeIndex, setActiveIndex] = useState(0);
   const [sotrValue, setSortValue] = useState("");
   const [valueSearch, setValueSerch] = useState("");
   const [order, setOrder] = useState("desc");
-
+  
+  
   useEffect(() => {
     setLoading(true);
     axios.get("https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items", {

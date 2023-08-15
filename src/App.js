@@ -5,17 +5,14 @@ import Logo from "./components/Heder/Logo";
 import NotFound from "./pages/NotFound";
 import Basket from "./pages/Basket";
 
-
-
-
 function App() {
   return (
     <div className="App">
       <Logo />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/basket" element ={<Basket/>}/>
-        <Route path="*" element= {<NotFound/>} />
+        <Route path="/basket" element={<Basket />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
