@@ -1,5 +1,5 @@
 import React from "react";
-import "./Categories.css";
+import './HederStyles/Categories.css';
 
 import { useDispatch } from "react-redux";
 import { setActiveIndex } from "../../redux/filter/filterSlice";

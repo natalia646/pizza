@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from "../scss/SecondPart.module.scss";
+import style from "../Heder/HederStyles/Search.module.scss";
 import lupa from '../assets/search.svg'
 
 function Search({ valueSearch, changeValueSerch }) {

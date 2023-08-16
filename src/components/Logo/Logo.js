@@ -2,7 +2,7 @@ import React from "react";
 import PizzaLogo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import SVGBasket from '../assets/basket.svg'
-import style from '../scss/Logo.module.scss'
+import style from './Logo.module.scss'
 
 const Logo = () => {
   return (

@@ -6,10 +6,10 @@ import "../App.css";
 
 import PizzaBlock from "../components/Pizza Block/PizzaBlock";
 import Skeleton from "../components/Pizza Block/Skeleton";
-import Categories from "../components/Categories/Categories";
-import Sort from "../components/Heder/Sort";
+import Categories from '../components/Heder/Categories';
+import Sort from '../components/Heder/Sort';
 import style from "./scss/Home.module.scss";
-import Search from "../components/Heder/Search";
+import Search from '../components/Heder/Search';
 
 const Home = () => {
   const { activeIndex, sotrValue, order } = useSelector((state) => state.filter);
