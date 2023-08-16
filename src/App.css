@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Indie+Flower&display=swap');
+
 :root {
   --head-color: #fadcb6;
   --white-color: #ffffffd5;
-  --second-color: #411f04;
+  --second-color: #884107;
   background-color: var(--head-color);
+  font-family: 'Indie Flower', cursive;
+
 }
  .App {
   background-color: var(--white-color);
