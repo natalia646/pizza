@@ -1,5 +1,5 @@
 import React  from "react";
-import style from '../scss/PizzaBlock.module.scss'
+import style from './PizzaBlock.module.scss'
 
 
 const PizzaBlock = ({ title, image, sizes, types, price }) => {
