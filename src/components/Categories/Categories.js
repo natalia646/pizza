@@ -1,19 +1,28 @@
 import React from "react";
 import "./Categories.css";
 
+import { useDispatch } from "react-redux";
+import { setActiveIndex } from "../../redux/filter/filterSlice";
 
-const Categories = ({activeIndex, clickCategories}) => {
-  
-  const categiries = ["All", "Mead", "Chicken", "Vegetarian", "Grensive", "Sharp"];
+const categiries = [
+  "All",
+  "Mead",
+  "Chicken",
+  "Vegetarian",
+  "Grensive",
+  "Sharp",
+];
 
 
+const Categories = ({ activeIndex }) => {
+  const dispatch = useDispatch();
 
   return (
     <div>
       <ul className="categiries">
         {categiries.map((categori, i) => (
           <li
-            onClick={() => clickCategories(i)}
+            onClick={() => dispatch(setActiveIndex(i))}
             key={i}
             className={
               activeIndex === i ? "active categories-list" : "categories-list"
