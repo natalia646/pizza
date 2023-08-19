@@ -14,6 +14,7 @@ const Sort = () => {
 
   return (
     <div>
+      
       Sort by
       <select id="sort" onChange={changeSort}>
         <option value=""></option>

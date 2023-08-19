@@ -4,6 +4,7 @@ const initialState = {
   activeIndex: 0,
   sotrValue: "",
   order: "",
+  valueSearch: "",
 };
 
 const filterSlice = createSlice({
@@ -19,9 +20,12 @@ const filterSlice = createSlice({
     setOrder(state, action) {
       state.order = action.payload;
     },
+    setValueSerch(state, action){
+      state.valueSearch = action.payload
+    }
   },
 });
 
-export const { setActiveIndex, setSortValue, setOrder } = filterSlice.actions;
+export const { setActiveIndex, setSortValue, setOrder, setValueSerch } = filterSlice.actions;
 
 export default filterSlice.reducer;

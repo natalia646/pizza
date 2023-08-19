@@ -1,22 +1,24 @@
 import React from "react";
 import axios from "axios";
+import qs from "qs";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import "../App.css";
 
 import PizzaBlock from "../components/Pizza Block/PizzaBlock";
 import Skeleton from "../components/Pizza Block/Skeleton";
-import Categories from '../components/Heder/Categories';
-import Sort from '../components/Heder/Sort';
+import Categories from "../components/Heder/Categories";
+import Sort from "../components/Heder/Sort";
 import style from "./scss/Home.module.scss";
-import Search from '../components/Heder/Search';
+import Search from "../components/Heder/Search";
 
 const Home = () => {
-  const { activeIndex, sotrValue, order } = useSelector((state) => state.filter);
+  const { activeIndex, sotrValue, order, valueSearch } = useSelector(
+    (state) => state.filter
+  );
 
   const [items, setItems] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  const [valueSearch, setValueSerch] = useState("");
 
   useEffect(() => {
     setLoading(true);
@@ -38,15 +40,20 @@ const Home = () => {
       });
   }, [activeIndex, sotrValue, valueSearch, order]);
 
+  console.log(qs);
+  useEffect(() => {
+    const querySrting = qs.stringify({
+
+
+    });
+  }, [activeIndex, sotrValue, valueSearch, order]);
+
   return (
     <main>
       <div className={style.categories_block}>
         <Categories activeIndex={activeIndex} />
         <Sort />
-        <Search
-          valueSearch={valueSearch}
-          changeValueSerch={(value) => setValueSerch(value)}
-        />
+        <Search valueSearch={valueSearch} />
       </div>
       <div className={style.all_pizza}>
         {isLoading
