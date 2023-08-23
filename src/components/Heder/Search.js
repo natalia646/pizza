@@ -7,12 +7,12 @@ import style from "../Heder/HederStyles/Search.module.scss";
 import lupa from "../assets/search.svg";
 import close from "../assets/close.svg";
 
-function Search({ valueSearch, changeValueSerch }) {
+function Search({ valueSearch}) {
   const inputRef = useRef();
   const dispatch = useDispatch();
 
   const onClickClear = () => {
-    changeValueSerch("");
+    changeSearch(" ");
     inputRef.current.focus();
   };
 

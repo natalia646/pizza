@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import qs from "qs";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useNavigate } from "react-router";
+import { useSelector, useDispatch } from "react-redux";
 import "../App.css";
+import { setFilter } from "../redux/filter/filterSlice";
 
 import PizzaBlock from "../components/Pizza Block/PizzaBlock";
 import Skeleton from "../components/Pizza Block/Skeleton";
@@ -16,10 +17,16 @@ const Home = () => {
   const { activeIndex, sotrValue, order, valueSearch } = useSelector(
     (state) => state.filter
   );
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [items, setItems] = useState([]);
   const [isLoading, setLoading] = useState(true);
+  // const isMounted = useRef(false);
+const [isMounted, setIsMounted] = useState(false)
+  
 
+  //axios
   useEffect(() => {
     setLoading(true);
     axios
@@ -39,14 +46,28 @@ const Home = () => {
         console.log(error);
       });
   }, [activeIndex, sotrValue, valueSearch, order]);
+  //
 
-  console.log(qs);
+  // qs library (set and get value from URL)
   useEffect(() => {
-    const querySrting = qs.stringify({
+    if (window.location.search) {
+      const params = qs.parse(window.location.search.substring(1));
+      dispatch(setFilter({ ...params }));
+    }
+  }, []);
 
-
-    });
-  }, [activeIndex, sotrValue, valueSearch, order]);
+  useEffect(() => {
+    if (isMounted) {
+      const querySrting = qs.stringify({
+        activeIndex,
+        sotrValue,
+        order,
+      });
+      navigate(`?${querySrting}`);
+    }
+    setIsMounted(true)
+  }, [activeIndex, sotrValue, order]);
+  //
 
   return (
     <main>
