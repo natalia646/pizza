@@ -1,9 +1,12 @@
 import React  from "react";
-import style from './PizzaBlock.module.scss'
-
+import style from './PizzaBlock.module.scss';
+import { useSelector } from "react-redux";
+import {setPizzaType} from '../../redux/slices/typeSlice'
 
 const PizzaBlock = ({ title, image, sizes, types, price }) => {
   const pizzaForm = ["thin", "standard"];
+
+  const {typePizza, size} = useSelector((state) => state.typePizza)
 
   return (
     <article className={style.article}>
@@ -11,7 +14,7 @@ const PizzaBlock = ({ title, image, sizes, types, price }) => {
       <h2>{title}</h2>
 
       <div className={style.sizes_types}>
-        <ul>
+        <ul className={typePizza}>
           {types.map((type) => (
             <li key={type}>
               {pizzaForm[type]}
