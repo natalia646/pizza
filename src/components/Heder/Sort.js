@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setSortValue, setOrder } from "../../redux/filter/filterSlice";
+import { setSortValue, setOrder } from "../../redux/slices/filterSlice";
 import style from './HederStyles/Sort.module.scss'
 
 const Sort = () => {

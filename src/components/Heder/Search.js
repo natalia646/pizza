@@ -1,7 +1,7 @@
 import React, { useRef} from "react";
 import { useDispatch } from "react-redux";
 
-import {setValueSerch} from '../../redux/filter/filterSlice';
+import {setValueSerch} from '../../redux/slices/filterSlice';
 
 import style from "../Heder/HederStyles/Search.module.scss";
 import lupa from "../assets/search.svg";
@@ -22,7 +22,7 @@ function Search({ valueSearch}) {
 
   return (
     <div className={style.root}>
-      <img src={lupa} className={style.lupa}></img>
+      <img src={lupa} className={style.lupa} alt="lupa"></img>
       <input
         placeholder="Search pizza..."
         value={valueSearch}
@@ -30,7 +30,7 @@ function Search({ valueSearch}) {
         ref={inputRef}
       />
       {valueSearch && (
-        <img src={close} className={style.close} 
+        <img src={close} className={style.close} alt="close"
         onClick={onClickClear}></img>
       )}
     </div>

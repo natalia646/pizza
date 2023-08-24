@@ -28,7 +28,7 @@
     margin: 0.01em;
     li {
       list-style-type: none;
-      background-color: var(--white-color);
+      border: 1px solid white;
       padding: 0.2em;
       margin: 0.5em;
       border-radius: 8%;
@@ -49,4 +49,7 @@
   .price {
     display: flex;
   }
+}
+.active{
+  background-color: white;
 }

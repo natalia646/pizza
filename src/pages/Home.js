@@ -4,7 +4,7 @@ import qs from "qs";
 import { useNavigate } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import "../App.css";
-import { setFilter } from "../redux/filter/filterSlice";
+import { setFilter } from "../redux/slices/filterSlice";
 
 import PizzaBlock from "../components/Pizza Block/PizzaBlock";
 import Skeleton from "../components/Pizza Block/Skeleton";
@@ -22,8 +22,7 @@ const Home = () => {
 
   const [items, setItems] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  // const isMounted = useRef(false);
-const [isMounted, setIsMounted] = useState(false)
+  const isMounted = useRef(false);
   
 
   //axios
@@ -57,7 +56,7 @@ const [isMounted, setIsMounted] = useState(false)
   }, []);
 
   useEffect(() => {
-    if (isMounted) {
+    if (isMounted.current) {
       const querySrting = qs.stringify({
         activeIndex,
         sotrValue,
@@ -65,7 +64,7 @@ const [isMounted, setIsMounted] = useState(false)
       });
       navigate(`?${querySrting}`);
     }
-    setIsMounted(true)
+    isMounted.current = true
   }, [activeIndex, sotrValue, order]);
   //
 

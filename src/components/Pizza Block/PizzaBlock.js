@@ -3,7 +3,7 @@ import style from './PizzaBlock.module.scss'
 
 
 const PizzaBlock = ({ title, image, sizes, types, price }) => {
-  const pizzaForm = ["тонкі", "стандартні"];
+  const pizzaForm = ["thin", "standard"];
 
   return (
     <article className={style.article}>
@@ -21,7 +21,7 @@ const PizzaBlock = ({ title, image, sizes, types, price }) => {
         <ul>
           {sizes.map((size, i) => (
             <li key={i}>
-              {size}
+              {size} cm.
             </li>
           ))}
         </ul>
