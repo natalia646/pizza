@@ -1,9 +1,13 @@
-import React  from "react";
-import style from './PizzaBlock.module.scss'
-
+import React, { useState } from "react";
+import style from "./PizzaBlock.module.scss";
 
 const PizzaBlock = ({ title, image, sizes, types, price }) => {
   const pizzaForm = ["thin", "standard"];
+ 
+  const [activeType, setActiveType] = useState(0);
+  const [activeSize, setActiveSize] = useState(0);
+
+
 
   return (
     <article className={style.article}>
@@ -12,15 +16,23 @@ const PizzaBlock = ({ title, image, sizes, types, price }) => {
 
       <div className={style.sizes_types}>
         <ul>
-          {types.map((type) => (
-            <li key={type}>
+          {types.map((type, i) => (
+            <li
+              key={type}
+              onClick={() => setActiveType(i)}
+              className={activeType === i ? style.active : ""}
+            >
               {pizzaForm[type]}
             </li>
           ))}
         </ul>
         <ul>
           {sizes.map((size, i) => (
-            <li key={i}>
+            <li
+              key={i}
+              onClick={() => setActiveSize(i)}
+              className={activeSize === i ? style.active : ""}
+            >
               {size} cm.
             </li>
           ))}
