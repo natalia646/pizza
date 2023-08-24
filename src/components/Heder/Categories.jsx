@@ -2,7 +2,7 @@ import React from "react";
 import './HederStyles/Categories.css';
 
 import { useDispatch } from "react-redux";
-import { setActiveIndex } from "../../redux/filter/filterSlice";
+import { setActiveIndex } from "../../redux/slices/filterSlice";
 
 const categiries = [
   "All",
