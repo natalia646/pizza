@@ -2,9 +2,16 @@ import React from "react";
 import PizzaLogo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import SVGBasket from '../assets/basket.svg'
-import style from './Logo.module.scss'
+import style from './Logo.module.scss';
+import Line from '../assets/line.svg'
+
+import {useSelector} from 'react-redux';
+
 
 const Logo = () => {
+
+  const {totalPrice, items} = useSelector(state => state.basket)
+
   return (
     <header className={style.header}>
          <div className={style.logotype}>
@@ -13,7 +20,9 @@ const Logo = () => {
          </div>
           <Link to ="/basket" className={style.basket}>
             <img className={style.basketsvg} src={SVGBasket}></img>
-            <p>1</p>
+            <h2>{items.length} </h2>
+            <img src={Line} alt='line'></img>
+            <h2>{totalPrice} UAH</h2>
           </Link>
     </header>
   );

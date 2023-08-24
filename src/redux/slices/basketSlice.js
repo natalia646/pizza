@@ -9,8 +9,20 @@ const basketSlise = createSlice({
   name: "basket",
   initialState,
   reducers: {
-    addProduct(state, action){
-        state.items.push(action.payload)
-    }
+    addItem(state, action) {
+      state.items.push(action.payload);
+      state.totalPrice = state.items.reduce((sum, obj) => {
+       return obj.price + sum;
+      }, 0);
+    },
+    removeItems(state, action) {
+      state.items = state.items.filter((obj) => obj.id !== action.payload);
+    },
+    clearItems(state) {
+      state.items = [];
+    },
   },
 });
+
+export const { addItem, removeItems, clearItems } = basketSlise.actions;
+export default basketSlise.reducer;

@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import style from "./PizzaBlock.module.scss";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/slices/basketSlice";
 
-const PizzaBlock = ({ title, image, sizes, types, price }) => {
+const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
   const pizzaForm = ["thin", "standard"];
- 
   const [activeType, setActiveType] = useState(0);
   const [activeSize, setActiveSize] = useState(0);
+  const dispatch = useDispatch();
 
 
+  const onCklikAdd = () => {
+    const item = {
+      id,
+      title,
+      image,
+      price,
+      type: activeType,
+      size: activeSize,
+    };
+    dispatch(addItem(item));
+  };
 
   return (
     <article className={style.article}>
@@ -40,7 +53,9 @@ const PizzaBlock = ({ title, image, sizes, types, price }) => {
       </div>
       <div className={style.price}>
         <p>{price} UAH</p>
-        <button className={style.add}>Add</button>
+        <button onClick={onCklikAdd} className={style.add}>
+          Add
+        </button>
       </div>
     </article>
   );
