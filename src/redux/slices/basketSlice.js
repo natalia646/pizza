@@ -10,9 +10,12 @@ const basketSlise = createSlice({
   initialState,
   reducers: {
     addItem(state, action) {
-      state.items.push(action.payload);
+      const findItem = state.items.find((obj) => obj.id === action.payload.id);
+      findItem ? findItem.count++ : state.items.push(action.payload);
+    },
+    setTotalPrice(state) {
       state.totalPrice = state.items.reduce((sum, obj) => {
-       return obj.price + sum;
+        return obj.price * obj.count + sum;
       }, 0);
     },
     removeItems(state, action) {
@@ -24,5 +27,5 @@ const basketSlise = createSlice({
   },
 });
 
-export const { addItem, removeItems, clearItems } = basketSlise.actions;
+export const { addItem, removeItems, clearItems, setTotalPrice } = basketSlise.actions;
 export default basketSlise.reducer;
