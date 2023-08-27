@@ -12,7 +12,7 @@ function Search({ valueSearch}) {
   const dispatch = useDispatch();
 
   const onClickClear = () => {
-    changeSearch(" ");
+    dispatch(setValueSerch(''));
     inputRef.current.focus();
   };
 

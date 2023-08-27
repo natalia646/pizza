@@ -32,9 +32,9 @@ const Home = () => {
       .get("https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items", {
         params: {
           search: valueSearch,
-          category: activeIndex > 0 ? activeIndex : "",
-          sortBy: sotrValue,
-          order: order,
+          // category: activeIndex > 0 ? activeIndex : "",
+          // sortBy: sotrValue,
+          // order: order,
         },
       })
       .then((res) => {
