@@ -3,17 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import BasketItem from "../components/BasketItem/BasketItem";
 import style from './scss/Basket.module.scss';
+import { clearItems } from "../redux/slices/basketSlice";
 
 
 
 const Basket = () => {
-  const dispatch = useDispatch();
-  const basketItems = useSelector((state) => state.basket);
-
-  const {items, totalPrice, totalCount} = basketItems
-
   const pizzaType = ["thin", "standard"];
   const pizzaSize = [26, 30, 40]
+
+
+  const dispatch = useDispatch();
+  const basketItems = useSelector((state) => state.basket);
+  const {items, totalPrice, totalCount} = basketItems;
+
+  const onClikClear = () => {
+    dispatch(clearItems())
+  }
+
 
   return (
     <div>
@@ -29,6 +35,7 @@ const Basket = () => {
         <div>
           <Link to="/">Turn around</Link>
           <button>Order</button>
+          <button onClick={onClikClear}>Clear basket</button>
         </div>
       </div>
     </div>

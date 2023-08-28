@@ -1,7 +1,11 @@
 import React from "react";
 import close from "../assets/close.svg";
 import style from "./BasketItem.module.scss";
-import { addItem } from "../../redux/slices/basketSlice";
+import {
+  addItem,
+  removeItems,
+  minusItem,
+} from "../../redux/slices/basketSlice";
 
 import { useDispatch } from "react-redux";
 
@@ -21,7 +25,13 @@ const BasketItem = ({
   const onCklikPlus = () => {
     dispatch(addItem({ id }));
   };
-
+  const onCklikMinus = () => {
+    dispatch(minusItem(id));
+  };
+  const onCklikRemove = () => {
+    dispatch(removeItems(id));
+  };
+  
   return (
     <div className={style.item}>
       <img src={image} alt={title} className={style.pizzaImg}></img>
@@ -35,10 +45,15 @@ const BasketItem = ({
       <div className={style.buttonsAddMinus}>
         <button onClick={onCklikPlus}>+</button>
         <span>{count}</span>
-        <button>-</button>
+        <button onClick={onCklikMinus}>-</button>
       </div>
       <h2>{price * count} UAN</h2>
-      <img src={close} alt="close" className={style.close}></img>
+      <img
+        src={close}
+        alt="close"
+        className={style.close}
+        onClick={onCklikRemove}
+      ></img>
     </div>
   );
 };

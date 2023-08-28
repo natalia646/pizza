@@ -8,11 +8,8 @@ import Line from "../assets/line.svg";
 import { useSelector } from "react-redux";
 
 const Logo = () => {
-  const { totalPrice, items } = useSelector((state) => state.basket);
+  const { totalPrice, totalCount } = useSelector((state) => state.basket);
 
-  const totalCount = items.reduce((sum, item) => {
-    return sum + item.count;
-  }, 0);
 
   return (
     <header className={style.header}>
