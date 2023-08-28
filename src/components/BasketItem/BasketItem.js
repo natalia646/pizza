@@ -1,27 +1,46 @@
-import React from 'react';
-import close from '../assets/close.svg'
-import { Link } from 'react-router-dom';
-import style from './BasketItem.module.scss'
+import React from "react";
+import close from "../assets/close.svg";
+import style from "./BasketItem.module.scss";
+import { addItem } from "../../redux/slices/basketSlice";
 
-export default function BasketItem({id, title, price, image, size, type, count}) {
+import { useDispatch } from "react-redux";
 
-    
+const BasketItem = ({
+  id,
+  title,
+  price,
+  image,
+  size,
+  type,
+  count,
+  pizzaType,
+  pizzaSize,
+}) => {
+  const dispatch = useDispatch();
+
+  const onCklikPlus = () => {
+    dispatch(addItem({ id }));
+  };
+
   return (
-    <div>
-      <img src={image} alt={title} ></img>
-      <div>
-          <h2>{title}</h2>
-          <p>description</p>
+    <div className={style.item}>
+      <img src={image} alt={title} className={style.pizzaImg}></img>
+      <div className={style.decs}>
+        <h2>{title}</h2>
+        <p>
+          {pizzaType[type]}, {pizzaSize[size]}cm.
+        </p>
       </div>
-      <div>
-        <button>+</button>
+      <p>{price} UAN</p>
+      <div className={style.buttonsAddMinus}>
+        <button onClick={onCklikPlus}>+</button>
         <span>{count}</span>
         <button>-</button>
       </div>
       <h2>{price * count} UAN</h2>
-      <Link to = '/' >Turn around</Link>
-      <img src={close} alt ='close' className={style.close}></img>
-
+      <img src={close} alt="close" className={style.close}></img>
     </div>
-  )
-}
+  );
+};
+
+export default BasketItem;
