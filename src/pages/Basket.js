@@ -20,12 +20,11 @@ const Basket = () => {
 
 
 
-  
+
   if (!totalCount) {
     return (
       <div>
         <Empty />
-        <Link to="/">Turn around</Link>
       </div>
     );
   }
