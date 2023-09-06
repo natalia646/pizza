@@ -3,7 +3,7 @@
 :root {
   --head-color: #fadcb6;
   --white-color: #ffffffd5;
-  --second-color: #884107;
+  /* --second-color: #c17a43; */
   background-color: var(--head-color);
   font-family: 'Indie Flower', cursive;
 

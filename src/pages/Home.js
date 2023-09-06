@@ -10,7 +10,7 @@ import Search from "../components/Heder/Search";
 import { useNavigate } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { setFilter } from "../redux/slices/filterSlice";
-import { fetchPizzas} from "../redux/slices/pizzasSlice";
+import { fetchPizzas } from "../redux/slices/pizzasSlice";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -21,9 +21,8 @@ const Home = () => {
   );
   const { items, status } = useSelector((state) => state.pizzas);
 
-  
   useEffect(() => {
-    dispatch(fetchPizzas(activeIndex, sotrValue, order));
+    dispatch(fetchPizzas({ activeIndex, sotrValue, order, valueSearch }));
   }, [activeIndex, sotrValue, valueSearch, order]);
 
   useEffect(() => {

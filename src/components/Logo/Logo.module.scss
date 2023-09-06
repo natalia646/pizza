@@ -2,44 +2,35 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px;
-  border: 2px solid white;
-  background-color: #fadcb6;
 
   .logotype {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20%;
-    padding: 8px;
-    box-shadow: 5px 3px 3px rgba(132, 131, 131, 0.67);
-    color: white;
-    padding-right: 15px;
-    background-color: #884107;
-
     img {
-      width: 50px;
-    }
-    h1 {
-      display: inline;
-      font-size: 30px;
-      color: white;
-      border-radius: 10%;
+      width: 150px;
+      border-radius: 50%;
     }
   }
-
+  
   .basket {
-    background-color: #884107;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    padding: 4px;
+    background-color: rgb(255, 246, 230);
+    border-radius: 35%;
+    border: 1px solid black;
+
+    .totalcount,
+    .totalprise {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 2px;
+      padding-right: 2px;
+    }
   }
-  img{
-    width: 45px;
+  img {
+    width: 25px;
+    padding: 5px;
   }
-  h2{
-    color: white;
+  h2 {
+    color: black;
+    padding: 5px;
   }
 }
