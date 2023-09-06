@@ -46,7 +46,7 @@ const Basket = () => {
         <p>All pizza: {totalCount}</p>
         <p>Amount: {totalPrice} UAN</p>
         <div>
-          <Link to="/">Turn around</Link>
+          <Link to="/pizza">Turn around</Link>
           <button>Order</button>
           <button onClick={onClikClear}>Clear basket</button>
         </div>

@@ -8,7 +8,7 @@ const NotFound = () => {
   return (
     <div>
       <h1 className={styles.root}> Nothing found :( </h1>
-      <Link to ='/'>go Home</Link>
+      <Link to ='/pizza'>go Home</Link>
     </div>
   )
 }
