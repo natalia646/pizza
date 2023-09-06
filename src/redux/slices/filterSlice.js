@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   activeIndex: 0,
-  sotrValue: "",
+  sortValue: "",
   order: "",
   valueSearch: "",
 };
@@ -15,7 +15,7 @@ const filterSlice = createSlice({
       state.activeIndex = action.payload;
     },
     setSortValue(state, action) {
-      state.sotrValue = action.payload;
+      state.sortValue = action.payload;
     },
     setOrder(state, action) {
       state.order = action.payload;
@@ -25,7 +25,7 @@ const filterSlice = createSlice({
     },
     setFilter(state, action) {
       state.activeIndex = Number(action.payload.activeIndex);
-      state.sotrValue = action.payload.sotrValue;
+      state.sortValue = action.payload.sotrValue;
       state.order = action.payload.order;
     },
   },
