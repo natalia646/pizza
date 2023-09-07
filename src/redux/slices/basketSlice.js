@@ -51,7 +51,7 @@ const basketSlise = createSlice({
   },
 });
 
-// export const selectCart = (state) =>state.basket
+export const selectCart = (state) =>state.basket
 
 export const { addItem, removeItems, clearItems, minusItem } =
   basketSlise.actions;
