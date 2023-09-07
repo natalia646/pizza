@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import Cart from "../assets/cart.svg";
 import style from "./Logo.module.scss";
 import Line from "../assets/line.svg";
-import Piggy from '../assets/piggy.svg'
+
 
 import { useSelector } from "react-redux";
+import { selectCart } from "../../redux/slices/basketSlice";
 
 const Logo = () => {
-  const { totalPrice, totalCount } = useSelector((state) => state.basket);
+  const { totalPrice, totalCount } = useSelector(selectCart);
 
   return (
     <header className={style.header}>

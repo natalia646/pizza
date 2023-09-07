@@ -10,7 +10,7 @@ export default function Empty() {
         <h2>Cart Empty</h2>
       </div>
       <img src={empty} alt="empty"></img>
-      <Link to="/" className={style.link}>
+      <Link to="/pizza" className={style.link}>
         Turn around
       </Link>
     </div>

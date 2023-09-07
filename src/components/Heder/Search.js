@@ -5,7 +5,7 @@ import {setValueSerch} from '../../redux/slices/filterSlice';
 
 import style from "../Heder/HederStyles/Search.module.scss";
 import lupa from "../assets/search.svg";
-import close from "../assets/close.svg";
+import Close from "../assets/close.svg";
 
 function Search({ valueSearch}) {
   const inputRef = useRef();
@@ -30,7 +30,7 @@ function Search({ valueSearch}) {
         ref={inputRef}
       />
       {valueSearch && (
-        <img src={close} className={style.close} alt="close"
+        <img src={Close} className={style.close} alt="close"
         onClick={onClickClear}></img>
       )}
     </div>
