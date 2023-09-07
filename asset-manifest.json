@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "/pizza/static/css/main.a29ea734.css",
-    "main.js": "/pizza/static/js/main.7a80210a.js",
+    "main.css": "/pizza/static/css/main.8e15f2c4.css",
+    "main.js": "/pizza/static/js/main.e764f21d.js",
     "static/media/empty.png": "/pizza/static/media/empty.aaadb89d19baea8fa9ac.png",
-    "static/media/logo.svg": "/pizza/static/media/logo.a65a9d53e265d48290679d09f03b084b.svg",
-    "static/media/basket.svg": "/pizza/static/media/basket.8da6bfe2810e08acea90d73b7ad21b4d.svg",
+    "static/media/fon.jpg": "/pizza/static/media/fon.455162f1ce8f0e2d0d7a.jpg",
+    "static/media/logo.jpg": "/pizza/static/media/logo.7ebf82e76e3536a647f6.jpg",
+    "static/media/piggy.svg": "/pizza/static/media/piggy.fc64d885f3fe8496dd0c04d57b6bb3c9.svg",
+    "static/media/cart.svg": "/pizza/static/media/cart.6eb44d704dac9c50fb8fd0274435cb4b.svg",
     "static/media/search.svg": "/pizza/static/media/search.46000e4e5512533aafd9f0ff32a61bef.svg",
     "static/media/close.svg": "/pizza/static/media/close.d698978f0ed1b2722b074caef92b228d.svg",
-    "static/media/line.svg": "/pizza/static/media/line.2a07cd6c5437b3d5e3400bc8dc9714c4.svg",
     "index.html": "/pizza/index.html",
-    "main.a29ea734.css.map": "/pizza/static/css/main.a29ea734.css.map",
-    "main.7a80210a.js.map": "/pizza/static/js/main.7a80210a.js.map"
+    "static/media/line.svg": "/pizza/static/media/line.ac4f51d459492b482598e46c41ca3e85.svg",
+    "main.8e15f2c4.css.map": "/pizza/static/css/main.8e15f2c4.css.map",
+    "main.e764f21d.js.map": "/pizza/static/js/main.e764f21d.js.map"
   },
   "entrypoints": [
-    "static/css/main.a29ea734.css",
-    "static/js/main.7a80210a.js"
+    "static/css/main.8e15f2c4.css",
+    "static/js/main.e764f21d.js"
   ]
 }
