@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import BasketItem from "../components/BasketItem/BasketItem";
 import style from "./scss/Basket.module.scss";
-import { clearItems } from "../redux/slices/basketSlice";
+import { clearItems, selectCart } from "../redux/slices/basketSlice";
 import Empty from "../components/EmptyBasket/Empty";
 
 const Basket = () => {
@@ -11,15 +11,12 @@ const Basket = () => {
   const pizzaSize = [26, 30, 40];
 
   const dispatch = useDispatch();
-  const basketItems = useSelector((state) => state.basket);
+  const basketItems = useSelector(selectCart);
   const { items, totalPrice, totalCount } = basketItems;
 
   const onClikClear = () => {
     dispatch(clearItems());
   };
-
-
-
 
   if (!totalCount) {
     return (

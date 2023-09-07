@@ -9,17 +9,15 @@ import Search from "../components/Heder/Search";
 
 import { useNavigate } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
-import { setFilter } from "../redux/slices/filterSlice";
-import { fetchPizzas } from "../redux/slices/pizzasSlice";
+import { selectFilter, setFilter } from "../redux/slices/filterSlice";
+import { fetchPizzas, selectPizza } from "../redux/slices/pizzasSlice";
 
 const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isMounted = useRef(false);
-  const { activeIndex, sortValue, order, valueSearch } = useSelector(
-    (state) => state.filter
-  );
-  const { items, status } = useSelector((state) => state.pizzas);
+  const { activeIndex, sortValue, order, valueSearch } = useSelector(selectFilter);
+  const { items, status } = useSelector(selectPizza);
 
   useEffect(() => {
     dispatch(fetchPizzas({ activeIndex, sortValue, order, valueSearch }));
