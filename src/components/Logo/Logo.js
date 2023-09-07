@@ -25,7 +25,6 @@ const Logo = () => {
         <img src={Line} alt="line"></img>
         <div className={style.totalprice}>
           <h3 className={style.price}>{totalPrice}</h3>
-     
           <h4 >UAH</h4>
         </div>
       </Link>

@@ -16,14 +16,14 @@ const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isMounted = useRef(false);
-  const { activeIndex, sotrValue, order, valueSearch } = useSelector(
+  const { activeIndex, sortValue, order, valueSearch } = useSelector(
     (state) => state.filter
   );
   const { items, status } = useSelector((state) => state.pizzas);
 
   useEffect(() => {
-    dispatch(fetchPizzas({ activeIndex, sotrValue, order, valueSearch }));
-  }, [activeIndex, sotrValue, valueSearch, order]);
+    dispatch(fetchPizzas({ activeIndex, sortValue, order, valueSearch }));
+  }, [activeIndex, sortValue, valueSearch, order]);
 
   useEffect(() => {
     if (window.location.search) {
@@ -35,13 +35,13 @@ const Home = () => {
     if (isMounted.current) {
       const querySrting = qs.stringify({
         activeIndex,
-        sotrValue,
+        sortValue,
         order,
       });
       navigate(`?${querySrting}`);
     }
     isMounted.current = true;
-  }, [activeIndex, sotrValue, order]);
+  }, [activeIndex, sortValue, order]);
 
   return (
     <main>

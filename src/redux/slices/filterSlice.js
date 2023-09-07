@@ -25,7 +25,7 @@ const filterSlice = createSlice({
     },
     setFilter(state, action) {
       state.activeIndex = Number(action.payload.activeIndex);
-      state.sortValue = action.payload.sotrValue;
+      state.sortValue = action.payload.sortValue;
       state.order = action.payload.order;
     },
   },
