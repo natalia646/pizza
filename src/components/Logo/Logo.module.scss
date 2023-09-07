@@ -1,36 +1,45 @@
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  background-image: url("../assets/fon.jpg");
+  background-size: contain;
 
   .logotype {
     img {
       width: 150px;
       border-radius: 50%;
+      margin-left: 50px;
     }
   }
-  
+
   .basket {
     display: flex;
-    background-color: rgb(255, 246, 230);
+    background-color: var(--head-color);
     border-radius: 35%;
     border: 1px solid black;
+    text-decoration: none;
+    margin-right: 50px;
+    padding: 2px;
 
     .totalcount,
-    .totalprise {
+    .totalprice {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-left: 2px;
-      padding-right: 2px;
     }
   }
   img {
-    width: 25px;
-    padding: 5px;
+    width: 23px;
   }
-  h2 {
+  h2,
+  h3 {
     color: black;
-    padding: 5px;
+  }
+  .count{
+    padding-left: 9px;
+  }
+  .price{
+ padding-right:  5px;
   }
 }
