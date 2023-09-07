@@ -3,13 +3,14 @@
 :root {
   --head-color: #fadcb6;
   --white-color: #ffffffd5;
-  /* --second-color: #c17a43; */
   background-color: var(--head-color);
-  font-family: 'Indie Flower', cursive;
+  /* font-family: 'Indie Flower', cursive; */
 
 }
  .App {
   background-color: var(--white-color);
   margin: 10px 100px;
+
+
 }
 

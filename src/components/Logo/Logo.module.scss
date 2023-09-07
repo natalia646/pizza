@@ -9,37 +9,53 @@
     img {
       width: 150px;
       border-radius: 50%;
-      margin-left: 50px;
+      margin-left: 5rem;
+      margin-bottom: 0.3rem;
+      margin-top: 0.3rem;
+
+      @media (max-width: 750px) {
+        width: 100px;
+      }
+
     }
   }
 
   .basket {
     display: flex;
     background-color: var(--head-color);
-    border-radius: 35%;
+    border-radius: 5%;
     border: 1px solid black;
     text-decoration: none;
     margin-right: 50px;
-    padding: 2px;
+    padding: 4px;
+    padding-left: 20px;
+    padding-right: 57px;
 
     .totalcount,
     .totalprice {
       display: flex;
       justify-content: center;
       align-items: center;
+
+      .count {
+        right: 16.7rem;
+        color: black;
+        position: absolute;
+      }
+      .price {
+        right: 12.6rem;
+        position: absolute;
+        color: black;
+      }
     }
   }
   img {
     width: 23px;
+    padding-right: 25px;
   }
-  h2,
-  h3 {
+  h4 {
     color: black;
-  }
-  .count{
-    padding-left: 9px;
-  }
-  .price{
- padding-right:  5px;
+    position: absolute;
+    right: 10.2rem;
   }
 }
