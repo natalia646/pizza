@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import style from "./PizzaBlock.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, setTotalPrice} from "../../redux/slices/basketSlice";
+import { addItem} from "../../redux/slices/basketSlice";
 import { Link } from "react-router-dom";
+
 
 const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
   const dispatch = useDispatch();
@@ -27,7 +28,6 @@ const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
     dispatch(addItem(item));
   };
 
-  
 
   return (
     <article className={style.article}  >

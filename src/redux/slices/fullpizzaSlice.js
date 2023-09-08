@@ -7,7 +7,6 @@ export const fetchID = createAsyncThunk(
     const { data } = await axios.get(
       "https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items/" + id
     );
-    console.log(id)
     return data;
   }
 );
