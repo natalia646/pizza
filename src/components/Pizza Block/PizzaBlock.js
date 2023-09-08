@@ -27,7 +27,7 @@ const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
   };
 
   return (
-    <article className={style.article}>
+    <article className={style.article}  >
       <img src={image} alt={title}></img>
       <h2>{title}</h2>
 
