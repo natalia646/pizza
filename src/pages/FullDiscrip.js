@@ -1,26 +1,19 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchID } from "../redux/slices/fullpizzaSlice";
 
 export default function FullDiscrip() {
   const { id } = useParams();
-  const [pizza, setPizza] = useState();
+  const dispatch = useDispatch();
+
+  const { pizza, status } = useSelector((state) => state.fullpizza);
 
   useEffect(() => {
-    async function fetchPizza() {
-      try {
-        const { data } = await axios.get(
-          "https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items/" + id
-        );
-        setPizza(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchPizza();
+    dispatch(fetchID({ id }));
   }, []);
 
-  if (!pizza) {
+  if (status !== "success") {
     return <h2>Loading...</h2>;
   } else {
     return (
@@ -29,6 +22,7 @@ export default function FullDiscrip() {
         <img src={pizza.imageUrl}></img>
         <p>Lorem ipson </p>
         <h3>{pizza.price} UAH</h3>
+        <button> Add</button>
       </div>
     );
   }

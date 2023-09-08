@@ -14,7 +14,7 @@ const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
   const itemCount = useSelector(state => state.basket.items.find(obj => obj.id === id));
   const addedCount = itemCount ? itemCount.count : '';
 
-  const onCklikAdd = () => {
+ const onCklikAdd = () => {
     const item = {
       id,
       title,
@@ -31,7 +31,7 @@ const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
 
   return (
     <article className={style.article}  >
-      <img src={image} alt={title}></img>
+      <Link to = {`/pizza/${id}`} ><img src={image} alt={title}></img></Link>
       <h2>{title}</h2>
           <Link className={style.more} to = {`/pizza/${id}`}>more</Link>
 
@@ -69,5 +69,7 @@ const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
     </article>
   );
 };
+
+
 
 export default PizzaBlock;

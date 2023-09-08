@@ -11,14 +11,15 @@ import { useNavigate } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { selectFilter, setFilter } from "../redux/slices/filterSlice";
 import { fetchPizzas, selectPizza } from "../redux/slices/pizzasSlice";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isMounted = useRef(false);
+
   const { activeIndex, sortValue, order, valueSearch } =
     useSelector(selectFilter);
+
   const { items, status } = useSelector(selectPizza);
 
   useEffect(() => {
@@ -43,8 +44,6 @@ const Home = () => {
     isMounted.current = true;
   }, [activeIndex, sortValue, order]);
 
-
-
   return (
     <main>
       <div className={style.categories_block}>
@@ -56,8 +55,8 @@ const Home = () => {
         {status === "loading"
           ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
           : items.map((item) => (
-              // <Link key={item.id} to = {`/pizza/${item.id}`}>
               <PizzaBlock
+                key={item.id}
                 id={item.id}
                 title={item.title}
                 image={item.imageUrl}
@@ -65,7 +64,6 @@ const Home = () => {
                 types={item.types}
                 price={item.price}
               />
-              //  </Link>
             ))}
       </div>
     </main>

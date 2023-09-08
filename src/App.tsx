@@ -7,6 +7,8 @@ import Basket from "./pages/Basket";
 import FullDiscrip from "./pages/FullDiscrip";
 
 function App() {
+
+  
   return (
     <div className="App">
       <Logo />
