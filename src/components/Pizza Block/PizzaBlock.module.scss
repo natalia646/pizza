@@ -13,9 +13,12 @@
   &:hover {
     cursor: pointer;
     box-shadow: 5px 5px 5px 8px rgba(2, 2, 0, 0.282);
+  
+    .more{
+      color: rgb(0, 12, 143);
+    }
 
   }
-
   img {
     width: 200px;
   }
@@ -25,7 +28,6 @@
     min-width: 200px;
     margin: 0.4em;
   }
-
   ul {
     display: flex;
     align-items: center;
@@ -41,21 +43,27 @@
       min-width: 50px;
       text-align: center;
       cursor: pointer;
+      text-decoration: none;
     }
   }
+  
+}
 
-  .add {
-    background-color: var(--head-color);
-    border: 1px solid black;
-    border-radius: 10%;
-    padding: 2px 25px;
-    cursor: pointer;
-    margin-left: 30px;
-  }
+.more{
+  color:white;
+  text-decoration: none;
+}
 
-  .price {
-    display: flex;
-  }
+.add {
+  background-color: var(--head-color);
+  border: 1px solid black;
+  border-radius: 10%;
+  padding: 2px 25px;
+  cursor: pointer;
+  margin-left: 30px;
+}
+.price {
+  display: flex;
 }
 .active {
   background-color: white;

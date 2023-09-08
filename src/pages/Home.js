@@ -56,7 +56,7 @@ const Home = () => {
         {status === "loading"
           ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
           : items.map((item) => (
-              <Link key={item.id} to = {`/pizza/${item.id}`}>
+              // <Link key={item.id} to = {`/pizza/${item.id}`}>
               <PizzaBlock
                 id={item.id}
                 title={item.title}
@@ -65,7 +65,7 @@ const Home = () => {
                 types={item.types}
                 price={item.price}
               />
-               </Link>
+              //  </Link>
             ))}
       </div>
     </main>

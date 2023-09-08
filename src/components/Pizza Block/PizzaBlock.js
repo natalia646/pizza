@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import style from "./PizzaBlock.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, setTotalPrice} from "../../redux/slices/basketSlice";
+import { Link } from "react-router-dom";
 
 const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
   const dispatch = useDispatch();
@@ -26,10 +27,13 @@ const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
     dispatch(addItem(item));
   };
 
+  
+
   return (
     <article className={style.article}  >
       <img src={image} alt={title}></img>
       <h2>{title}</h2>
+          <Link className={style.more} to = {`/pizza/${id}`}>more</Link>
 
       <div className={style.sizes_types}>
         <ul>
@@ -60,7 +64,6 @@ const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
         <button onClick={onCklikAdd} className={style.add}>
           <span>Add</span>
           <span className={style.countButton}>{addedCount}</span>
-
         </button>
       </div>
     </article>
