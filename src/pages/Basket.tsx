@@ -5,8 +5,9 @@ import style from "./scss/Basket.module.scss";
 import { clearItems, selectCart } from "../redux/slices/basketSlice";
 import Empty from "../components/EmptyBasket/Empty";
 
-const Basket = () => {
 
+
+const Basket = () => {
 
   const dispatch = useDispatch();
   const basketItems = useSelector(selectCart);

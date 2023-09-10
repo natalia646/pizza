@@ -15,9 +15,10 @@ const Search: React.FC<SearchProps> = ({ valueSearch }) => {
 
   const onClickClear = () => {
     dispatch(setValueSerch(""));
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
+    // if (inputRef.current) {
+    //   inputRef.current.focus();
+    // }
+    inputRef.current?.focus(); // the same, but shorter
   };
   type Event = { target: { value: string } };
   const changeSearch = (event: Event) => {

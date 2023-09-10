@@ -3,16 +3,14 @@ import { addItem } from "../../redux/slices/basketSlice";
 import style from "./ButtonAdd.module.scss";
 import React from "react";
 
-// type AppProps = {
-//   item: {
-//     id:string,
-//     count: number
-//   }
-// }
+type AppProps = {
+  item: {
+    id: string;
+    count: number;
+  };
+};
 
-const ButtonAdd = ({
-  item
-}) => {
+const ButtonAdd: React.FC<AppProps> = ({ item }) => {
   const dispatch = useDispatch();
   const { id } = item;
   const itemCount = useSelector((state) =>
@@ -22,7 +20,6 @@ const ButtonAdd = ({
   const onCklikAdd = () => {
     dispatch(addItem(item));
   };
-
 
   return (
     <div className={style.counter}>

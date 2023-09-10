@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import qs from "qs";
 import style from "./scss/Home.module.scss";
 import PizzaBlock from "../components/Pizza Block/PizzaBlock";
@@ -7,6 +6,7 @@ import Categories from "../components/Heder/Categories";
 import Sort from "../components/Heder/Sort";
 import Search from "../components/Heder/Search";
 
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { selectFilter, setFilter } from "../redux/slices/filterSlice";

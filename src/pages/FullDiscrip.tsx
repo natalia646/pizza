@@ -6,6 +6,9 @@ import style from "./scss/FullDiscrip.module.scss";
 import ButtonAdd from "../components/ButtonAdd/ButtonAdd";
 import TypeSize from "../components/TypeSize/TypeSize";
 
+
+
+
 const FullDiscrip = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -14,7 +17,6 @@ const FullDiscrip = () => {
   const [activeSize, setActiveSize] = useState(0);
   const [activeType, setActiveType] = useState(0);
 
-  console.log(pizza);
 
   useEffect(() => {
     dispatch(fetchID({ id }));

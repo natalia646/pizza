@@ -1,13 +1,13 @@
 import style from './TypeSize.module.scss';
-import { useState } from 'react';
 
-const TypeSize = ({types, sizes, activeSize, activeType, setActiveType, setActiveSize}) => {
+type TypeSizeProps = {
+  types: number[], sizes: number[], activeSize:number, activeType:number, setActiveType, setActiveSize
+}
+
+const TypeSize: React.FC <TypeSizeProps>= ({types, sizes, activeSize, activeType, setActiveType, setActiveSize}) => {
 
   const pizzaForm = ["thin", "standard"];
-  // const [activeType, setActiveType] = useState(0);
-  // const [activeSize, setActiveSize] = useState(0);
 
- 
 
   return (
     <div className={style.sizes_types}>
