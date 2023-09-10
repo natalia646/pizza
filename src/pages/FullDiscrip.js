@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchID } from "../redux/slices/fullpizzaSlice";
@@ -11,10 +11,14 @@ const FullDiscrip = () => {
   const dispatch = useDispatch();
   const { pizza, status } = useSelector((state) => state.fullpizza);
 
+  
+  const [activeSize, setActiveSize] = useState(0);
+  const [activeType, setActiveType] = useState(0);
+
   console.log(pizza);
 
   useEffect(() => {
-    dispatch(fetchID({ id }) );
+    dispatch(fetchID({ id }));
   }, []);
 
   if (status !== "success") {
@@ -25,8 +29,15 @@ const FullDiscrip = () => {
         <div className={style.image}>
           <img className={style.img} src={pizza.imageUrl} />
           <h3>{pizza.price} UAH</h3>
-          <TypeSize types = {pizza.types} sizes={pizza.sizes} />
-          <ButtonAdd item={{ ...pizza, count: 1 }} />
+          <TypeSize
+            types={pizza.types}
+            activeType={activeType}
+            setActiveType={setActiveType}
+            sizes={pizza.sizes}
+            activeSize={activeSize}
+            setActiveSize={setActiveSize}
+          />
+          <ButtonAdd item={{ ...pizza, count: 1, activeSize, activeType }} />
         </div>
         <div className={style.text}>
           <h2>{pizza.title}</h2>
@@ -35,6 +46,6 @@ const FullDiscrip = () => {
       </div>
     );
   }
-}
+};
 
-export default FullDiscrip
+export default FullDiscrip;

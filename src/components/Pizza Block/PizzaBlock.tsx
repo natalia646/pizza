@@ -21,7 +21,6 @@ const PizzaBlock: React.FC<PizzaProps> = ({
   types,
   price,
 }) => {
-  // const pizzaForm = ["thin", "standard"];
   const [activeType, setActiveType] = useState(0);
   const [activeSize, setActiveSize] = useState(0);
 

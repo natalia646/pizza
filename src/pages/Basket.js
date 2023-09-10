@@ -6,8 +6,7 @@ import { clearItems, selectCart } from "../redux/slices/basketSlice";
 import Empty from "../components/EmptyBasket/Empty";
 
 const Basket = () => {
-  // const pizzaTypes = ["thin", "standard"];
-  // const pizzaSizes = [26, 30, 40];
+
 
   const dispatch = useDispatch();
   const basketItems = useSelector(selectCart);
@@ -33,8 +32,6 @@ const Basket = () => {
           <BasketItem
             key={item.id}
             {...item}
-            // pizzaTypes={pizzaTypes}
-            // pizzaSizes={pizzaSizes}
           /> 
         ))}
       </div>
