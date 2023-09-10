@@ -24,17 +24,18 @@ const Basket = () => {
       </div>
     );
   }
+  console.log(items)
   return (
     <div>
       <h1>Basket</h1>
       <div className={style.items}>
-        {items.map((item) => (
+        {items.map((item) => ( 
           <BasketItem
             key={item.id}
             {...item}
             // pizzaTypes={pizzaTypes}
             // pizzaSizes={pizzaSizes}
-          />
+          /> 
         ))}
       </div>
 

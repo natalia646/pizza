@@ -14,8 +14,8 @@ type CartProps = {
   title: string;
   price: number;
   imageUrl: string;
-  size: number;
-  type: number;
+  activeSize: number;
+  activeType: number;
   count: number;
   pizzaTypes: string[];
   pizzaSizes: number[];
@@ -26,11 +26,9 @@ const BasketItem: React.FC<CartProps> = ({
   title,
   price,
   imageUrl,
-  size,
-  type,
-  count,
-  pizzaTypes,
-  pizzaSizes,
+  activeSize,
+  activeType,
+  count
 }) => {
   const dispatch = useDispatch();
 
@@ -44,15 +42,17 @@ const BasketItem: React.FC<CartProps> = ({
     dispatch(removeItems(id));
   };
 
-  // const pizzaForm = ["thin", "standard"];
+  const pizzaTypes = ["thin", "standard"];
+  const pizzaSizes = [26, 30, 40];
 
+ 
   return (
     <div className={style.item}>
       <img src={imageUrl} alt={title} className={style.pizzaImg}></img>
       <div className={style.decs}>
         <h2>{title}</h2>
         <p>
-          {pizzaTypes[type]}, {pizzaSizes[size]}cm.
+          {pizzaTypes[activeType]}, {pizzaSizes[activeSize]}cm.
         </p>
       </div>
       <p>{price} UAN</p>

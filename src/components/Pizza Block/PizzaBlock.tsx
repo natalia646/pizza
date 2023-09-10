@@ -30,8 +30,8 @@ const PizzaBlock: React.FC<PizzaProps> = ({
     title,
     imageUrl,
     price,
-    types,
-    sizes,
+    activeType,
+    activeSize,
     count: 1,
   };
 
@@ -45,12 +45,19 @@ const PizzaBlock: React.FC<PizzaProps> = ({
         more
       </Link>
       <TypeSize
-        types={types} activeType = {activeType} setActiveType = {setActiveType}
-        sizes={sizes} activeSize = {activeType} setActiveSize = {setActiveType}
+        types={types}
+        activeType={activeType}
+        setActiveType={setActiveType}
+        sizes={sizes}
+        activeSize={activeSize}
+        setActiveSize={setActiveSize}
       />
       <div className={style.price}>
         <p className={style.uan}>{price} UAH</p>
-        <ButtonAdd item={item} activeType = {activeType} setActiveType = {setActiveType}/>
+        <ButtonAdd
+          item={item} activeType={activeType}
+          activeSize={activeSize}
+        />
       </div>
     </article>
   );

@@ -25,7 +25,7 @@ const FullDiscrip = () => {
         <div className={style.image}>
           <img className={style.img} src={pizza.imageUrl} />
           <h3>{pizza.price} UAH</h3>
-          <TypeSize types = {pizza.types} sizes={pizza.sizes}/>
+          <TypeSize types = {pizza.types} sizes={pizza.sizes} />
           <ButtonAdd item={{ ...pizza, count: 1 }} />
         </div>
         <div className={style.text}>
