@@ -11,9 +11,7 @@ import React from "react";
 // }
 
 const ButtonAdd = ({
-  item,
-  activeType,
-  activeSize
+  item
 }) => {
   const dispatch = useDispatch();
   const { id } = item;

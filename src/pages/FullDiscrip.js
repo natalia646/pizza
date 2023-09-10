@@ -11,7 +11,6 @@ const FullDiscrip = () => {
   const dispatch = useDispatch();
   const { pizza, status } = useSelector((state) => state.fullpizza);
 
-  
   const [activeSize, setActiveSize] = useState(0);
   const [activeType, setActiveType] = useState(0);
 

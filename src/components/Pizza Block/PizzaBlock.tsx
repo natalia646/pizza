@@ -54,8 +54,7 @@ const PizzaBlock: React.FC<PizzaProps> = ({
       <div className={style.price}>
         <p className={style.uan}>{price} UAH</p>
         <ButtonAdd
-          item={item} activeType={activeType}
-          activeSize={activeSize}
+          item={item} 
         />
       </div>
     </article>
