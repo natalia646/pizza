@@ -4,8 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchID } from "../redux/slices/fullpizzaSlice";
 import style from "./scss/FullDiscrip.module.scss";
 import ButtonAdd from "../components/ButtonAdd/ButtonAdd";
+import TypeSize from "../components/TypeSize/TypeSize";
 
-export default function FullDiscrip() {
+const FullDiscrip = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { pizza, status } = useSelector((state) => state.fullpizza);
@@ -13,7 +14,7 @@ export default function FullDiscrip() {
   console.log(pizza);
 
   useEffect(() => {
-    dispatch(fetchID({ id }));
+    dispatch(fetchID({ id }) );
   }, []);
 
   if (status !== "success") {
@@ -24,6 +25,7 @@ export default function FullDiscrip() {
         <div className={style.image}>
           <img className={style.img} src={pizza.imageUrl} />
           <h3>{pizza.price} UAH</h3>
+          <TypeSize types = {pizza.types} sizes={pizza.sizes}/>
           <ButtonAdd item={{ ...pizza, count: 1 }} />
         </div>
         <div className={style.text}>
@@ -34,3 +36,5 @@ export default function FullDiscrip() {
     );
   }
 }
+
+export default FullDiscrip

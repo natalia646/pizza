@@ -7,11 +7,9 @@ import Line from "../assets/line.svg";
 import { useSelector } from "react-redux";
 import { selectCart } from "../../redux/slices/basketSlice";
 
-const Logo = () => {
+const Logo: React.FC = () => {
   const { totalPrice, totalCount } = useSelector(selectCart);
   const { pathname } = useLocation();
-
-
 
   return (
     <header className={style.header}>

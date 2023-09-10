@@ -1,8 +1,16 @@
 import {useSelector, useDispatch} from 'react-redux';
 import { addItem } from '../../redux/slices/basketSlice';
 import style from './ButtonAdd.module.scss'
+import React from 'react';
 
-export default function ButtonAdd({item}) {
+// type AppProps = {
+//   item: {
+//     id:string,
+//     count: number
+//   }
+// }
+
+const ButtonAdd= ({item, activeType, activeSize, setActiveType, setActiveSize}) => {
     const dispatch = useDispatch();
     const {id} = item
     const itemCount = useSelector((state) =>
@@ -28,3 +36,4 @@ export default function ButtonAdd({item}) {
     </div>
   )
 }
+export default ButtonAdd

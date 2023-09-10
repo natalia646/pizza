@@ -1,6 +1,4 @@
-import React from "react";
 import './HederStyles/Categories.css';
-
 import { useDispatch } from "react-redux";
 import { setActiveIndex } from "../../redux/slices/filterSlice";
 
@@ -13,8 +11,11 @@ const categiries = [
   "Sharp",
 ];
 
+type CategoriesProps = {
+  activeIndex: number
+}
 
-const Categories = ({ activeIndex }) => {
+const Categories: React.FC <CategoriesProps> = ({ activeIndex }) => {
   const dispatch = useDispatch();
 
   return (

@@ -9,7 +9,19 @@ import {
 
 import { useDispatch } from "react-redux";
 
-const BasketItem = ({
+type CartProps = {
+  id: string;
+  title: string;
+  price: number;
+  imageUrl: string;
+  size: number;
+  type: number;
+  count: number;
+  pizzaTypes: string[];
+  pizzaSizes: number[];
+};
+
+const BasketItem: React.FC<CartProps> = ({
   id,
   title,
   price,
@@ -17,8 +29,8 @@ const BasketItem = ({
   size,
   type,
   count,
-  pizzaType,
-  pizzaSize,
+  pizzaTypes,
+  pizzaSizes,
 }) => {
   const dispatch = useDispatch();
 
@@ -31,16 +43,16 @@ const BasketItem = ({
   const onCklikRemove = () => {
     dispatch(removeItems(id));
   };
-  
-  const pizzaForm = ["thin", "standard"];
-  
+
+  // const pizzaForm = ["thin", "standard"];
+
   return (
     <div className={style.item}>
       <img src={imageUrl} alt={title} className={style.pizzaImg}></img>
       <div className={style.decs}>
         <h2>{title}</h2>
         <p>
-          {pizzaType[type]}, {pizzaSize[size]}cm.
+          {pizzaTypes[type]}, {pizzaSizes[size]}cm.
         </p>
       </div>
       <p>{price} UAN</p>

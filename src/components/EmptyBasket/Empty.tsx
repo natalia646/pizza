@@ -1,9 +1,9 @@
-import React from "react";
+
 import empty from "../assets/empty.png";
 import style from "./Empty.module.scss";
 import { Link } from "react-router-dom";
 
-export default function Empty() {
+const Empty: React.FC = () => {
   return (
     <div className={style.empty}>
       <div>
@@ -16,3 +16,5 @@ export default function Empty() {
     </div>
   );
 }
+
+export default Empty

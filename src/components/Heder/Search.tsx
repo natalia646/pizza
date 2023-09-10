@@ -1,22 +1,26 @@
-import React, { useRef} from "react";
+import { useRef } from "react";
 import { useDispatch } from "react-redux";
-
-import {setValueSerch} from '../../redux/slices/filterSlice';
-
+import { setValueSerch } from "../../redux/slices/filterSlice";
 import style from "../Heder/HederStyles/Search.module.scss";
 import lupa from "../assets/search.svg";
 import Close from "../assets/close.svg";
 
-function Search({ valueSearch}) {
-  const inputRef = useRef();
+type SearchProps = {
+  valueSearch: string;
+};
+
+const Search: React.FC<SearchProps> = ({ valueSearch }) => {
+  const inputRef = useRef<HTMLInputElement>(null);
   const dispatch = useDispatch();
 
   const onClickClear = () => {
-    dispatch(setValueSerch(''));
-    inputRef.current.focus();
+    dispatch(setValueSerch(""));
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   };
-
-  const changeSearch = (event) => {
+  type Event = { target: { value: string } };
+  const changeSearch = (event: Event) => {
     dispatch(setValueSerch(event.target.value));
   };
 
@@ -30,11 +34,15 @@ function Search({ valueSearch}) {
         ref={inputRef}
       />
       {valueSearch && (
-        <img src={Close} className={style.close} alt="close"
-        onClick={onClickClear}></img>
+        <img
+          src={Close}
+          className={style.close}
+          alt="close"
+          onClick={onClickClear}
+        ></img>
       )}
     </div>
   );
-}
+};
 
 export default Search;

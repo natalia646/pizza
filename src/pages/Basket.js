@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import BasketItem from "../components/BasketItem/BasketItem";
@@ -7,8 +6,8 @@ import { clearItems, selectCart } from "../redux/slices/basketSlice";
 import Empty from "../components/EmptyBasket/Empty";
 
 const Basket = () => {
-  const pizzaType = ["thin", "standard"];
-  const pizzaSize = [26, 30, 40];
+  // const pizzaTypes = ["thin", "standard"];
+  // const pizzaSizes = [26, 30, 40];
 
   const dispatch = useDispatch();
   const basketItems = useSelector(selectCart);
@@ -33,8 +32,8 @@ const Basket = () => {
           <BasketItem
             key={item.id}
             {...item}
-            pizzaType={pizzaType}
-            pizzaSize={pizzaSize}
+            // pizzaTypes={pizzaTypes}
+            // pizzaSizes={pizzaSizes}
           />
         ))}
       </div>
