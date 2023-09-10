@@ -1,0 +1,15 @@
+.counter {
+    border: 1px solid;
+  .button {
+    background-color: var(--head-color);
+    // margin: 10px 0px 10px 40px;
+    padding: 3px 11px 3px 14px;
+    // border-radius: 10%;
+    border: none;
+    font-size: 0.9rem;
+  }
+  .count {
+   background-color: var(--head-color);
+   padding: 2px 3px 3px 3px;
+  }
+}

@@ -1,8 +1,6 @@
-import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-// import { selectPizza } from '../../redux/slices/pizzasSlice';
-// import { useState } from 'react';
 import { addItem } from '../../redux/slices/basketSlice';
+import style from './ButtonAdd.module.scss'
 
 export default function ButtonAdd({item}) {
     const dispatch = useDispatch();
@@ -25,9 +23,9 @@ export default function ButtonAdd({item}) {
     console.log(item)
 
   return (
-    <div>
-      <button onClick={onCklikAdd}>Add</button>
-      <span>{addedCount}</span>
+    <div className={style.counter}>
+      <button className={style.button} onClick={onCklikAdd}>Add</button>
+      <span className={style.count}>{addedCount}</span>
     </div>
   )
 }
