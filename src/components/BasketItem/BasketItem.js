@@ -13,7 +13,7 @@ const BasketItem = ({
   id,
   title,
   price,
-  image,
+  imageUrl,
   size,
   type,
   count,
@@ -32,9 +32,11 @@ const BasketItem = ({
     dispatch(removeItems(id));
   };
   
+  const pizzaForm = ["thin", "standard"];
+  
   return (
     <div className={style.item}>
-      <img src={image} alt={title} className={style.pizzaImg}></img>
+      <img src={imageUrl} alt={title} className={style.pizzaImg}></img>
       <div className={style.decs}>
         <h2>{title}</h2>
         <p>

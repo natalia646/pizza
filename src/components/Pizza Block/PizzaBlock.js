@@ -3,7 +3,7 @@ import style from "./PizzaBlock.module.scss";
 import { Link } from "react-router-dom";
 import ButtonAdd from "../ButtonAdd/ButtonAdd";
 
-const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
+const PizzaBlock = ({ id, title, imageUrl, sizes, types, price }) => {
   const pizzaForm = ["thin", "standard"];
   const [activeType, setActiveType] = useState(0);
   const [activeSize, setActiveSize] = useState(0);
@@ -11,7 +11,7 @@ const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
   const item = {
     id,
     title,
-    image,
+    imageUrl,
     price,
     type: activeType,
     size: activeSize,
@@ -21,7 +21,7 @@ const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
   return (
     <article className={style.article}>
       <Link to={`/pizza/${id}`}>
-        <img src={image} alt={title}></img>
+        <img src={imageUrl} alt={title}></img>
       </Link>
       <h2>{title}</h2>
       <Link className={style.more} to={`/pizza/${id}`}>
