@@ -1,39 +1,32 @@
 import { useState } from "react";
 import style from "./PizzaBlock.module.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { addItem} from "../../redux/slices/basketSlice";
 import { Link } from "react-router-dom";
-
+import ButtonAdd from "../ButtonAdd/ButtonAdd";
 
 const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
-  const dispatch = useDispatch();
   const pizzaForm = ["thin", "standard"];
   const [activeType, setActiveType] = useState(0);
   const [activeSize, setActiveSize] = useState(0);
 
-
-  const itemCount = useSelector(state => state.basket.items.find(obj => obj.id === id));
-  const addedCount = itemCount ? itemCount.count : '';
-
- const onCklikAdd = () => {
-    const item = {
-      id,
-      title,
-      image,
-      price,
-      type: activeType,
-      size: activeSize,
-      count: 1,
-    };
-    dispatch(addItem(item));
+  const item = {
+    id,
+    title,
+    image,
+    price,
+    type: activeType,
+    size: activeSize,
+    count: 1,
   };
 
-
   return (
-    <article className={style.article}  >
-      <Link to = {`/pizza/${id}`} ><img src={image} alt={title}></img></Link>
+    <article className={style.article}>
+      <Link to={`/pizza/${id}`}>
+        <img src={image} alt={title}></img>
+      </Link>
       <h2>{title}</h2>
-          <Link className={style.more} to = {`/pizza/${id}`}>more</Link>
+      <Link className={style.more} to={`/pizza/${id}`}>
+        more
+      </Link>
 
       <div className={style.sizes_types}>
         <ul>
@@ -61,15 +54,10 @@ const PizzaBlock = ({ id, title, image, sizes, types, price }) => {
       </div>
       <div className={style.price}>
         <p>{price} UAH</p>
-        <button onClick={onCklikAdd} className={style.add}>
-          <span>Add</span>
-          <span className={style.countButton}>{addedCount}</span>
-        </button>
+        <ButtonAdd item={item} />
       </div>
     </article>
   );
 };
-
-
 
 export default PizzaBlock;
