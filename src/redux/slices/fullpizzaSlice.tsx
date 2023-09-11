@@ -1,10 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { CartItem } from "./basketSlice";
 
-export const fetchID = createAsyncThunk(
+type FetchID = {
+  id: string;
+};
+
+export const fetchID = createAsyncThunk<CartItem, FetchID>(
   "full/fetchID",
-  async ({id}) => {
-    const { data } = await axios.get(
+  async ({ id }) => {
+    const { data } = await axios.get<CartItem>(
       "https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items/" + id
     );
     return data;
@@ -21,23 +26,20 @@ const fullpizzaSlise = createSlice({
   initialState,
   reducers: {},
 
-  extraReducers: {
-    [fetchID.pending]: (state) => {
+  extraReducers: (builder) => {
+    builder.addCase(fetchID.pending, (state) => {
       state.status = "loading";
       state.pizza = {};
-    },
-    [fetchID.fulfilled]: (state, action) => {
-      state.pizza = action.payload;
+    });
+    builder.addCase(fetchID.fulfilled, (state, action) => {
       state.status = "success";
-    },
-    [fetchID.rejected]: (state) => {
+      state.pizza = action.payload;
+    });
+    builder.addCase(fetchID.rejected, (state) => {
       state.status = "error";
       state.pizza = {};
-    },
+    });
   },
 });
-
-
-
 
 export default fullpizzaSlise.reducer;

@@ -1,6 +1,10 @@
 import ContentLoader from "react-content-loader"
 
-const Skeleton = (props) => (
+type SceletonProps = {
+  props: any
+}
+
+const Skeleton: React.FC <SceletonProps> = (props) => (
     <ContentLoader 
     className="pazza-article"
     speed={2}

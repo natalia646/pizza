@@ -1,25 +1,24 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { fetchID } from "../redux/slices/fullpizzaSlice";
+import { useAppDispatch } from "../redux/store";
 import style from "./scss/FullDiscrip.module.scss";
 import ButtonAdd from "../components/ButtonAdd/ButtonAdd";
 import TypeSize from "../components/TypeSize/TypeSize";
 
-
-
-
 const FullDiscrip = () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { pizza, status } = useSelector((state) => state.fullpizza);
 
   const [activeSize, setActiveSize] = useState(0);
   const [activeType, setActiveType] = useState(0);
 
-
   useEffect(() => {
-    dispatch(fetchID({ id }));
+    if (id) {
+      dispatch(fetchID({ id }));
+    }
   }, []);
 
   if (status !== "success") {

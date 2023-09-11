@@ -5,20 +5,22 @@ import {
   addItem,
   removeItems,
   minusItem,
+  CartItem,
 } from "../../redux/slices/basketSlice";
 
 import { useDispatch } from "react-redux";
+import { type } from "os";
 
 type CartProps = {
+  activeSize: number;
+  activeType: number;
+  pizzaTypes: string[];
+  pizzaSizes: number[];
   id: string;
   title: string;
   price: number;
   imageUrl: string;
-  activeSize: number;
-  activeType: number;
   count: number;
-  pizzaTypes: string[];
-  pizzaSizes: number[];
 };
 
 const BasketItem: React.FC<CartProps> = ({
@@ -28,11 +30,13 @@ const BasketItem: React.FC<CartProps> = ({
   imageUrl,
   activeSize,
   activeType,
-  count
+  count,
 }) => {
   const dispatch = useDispatch();
 
   const onCklikPlus = () => {
+    
+
     dispatch(addItem({ id }));
   };
   const onCklikMinus = () => {
@@ -45,7 +49,6 @@ const BasketItem: React.FC<CartProps> = ({
   const pizzaTypes = ["thin", "standard"];
   const pizzaSizes = [26, 30, 40];
 
- 
   return (
     <div className={style.item}>
       <img src={imageUrl} alt={title} className={style.pizzaImg}></img>

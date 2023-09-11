@@ -20,8 +20,8 @@ const Search: React.FC<SearchProps> = ({ valueSearch }) => {
     // }
     inputRef.current?.focus(); // the same, but shorter
   };
-  type Event = { target: { value: string } };
-  const changeSearch = (event: Event) => {
+
+  const changeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setValueSerch(event.target.value));
   };
 
@@ -31,8 +31,7 @@ const Search: React.FC<SearchProps> = ({ valueSearch }) => {
       <input
         placeholder="Search pizza..."
         value={valueSearch}
-        onChange={changeSearch}
-        ref={inputRef}
+        onChange={changeSearch} 
       />
       {valueSearch && (
         <img

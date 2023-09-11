@@ -32,7 +32,7 @@ const Basket = () => {
         {items.map((item) => ( 
           <BasketItem
             key={item.id}
-            {...item}
+            item = {item}
           /> 
         ))}
       </div>

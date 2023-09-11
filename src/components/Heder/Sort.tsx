@@ -5,12 +5,12 @@ import style from "./HederStyles/Sort.module.scss";
 
 const Sort = () => {
   const dispatch = useDispatch();
-  type Event = { target: { value: string } };
 
-  const changeSort = (event: Event) => {
+
+  const changeSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
     dispatch(setSortValue(event.target.value));
   };
-  const changeOrder = (event: Event) => {
+  const changeOrder = (event: React.ChangeEvent<HTMLSelectElement>) => {
     dispatch(setOrder(event.target.value));
   };
 

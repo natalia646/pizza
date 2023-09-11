@@ -29,8 +29,8 @@ const PizzaBlock: React.FC<PizzaProps> = ({
     title,
     imageUrl,
     price,
-    activeType,
-    activeSize,
+    sizes,
+    types,
     count: 1,
   };
 
@@ -54,7 +54,7 @@ const PizzaBlock: React.FC<PizzaProps> = ({
       <div className={style.price}>
         <p className={style.uan}>{price} UAH</p>
         <ButtonAdd
-          item={item} 
+          item={item} activeType={activeType} activeSize={activeSize}
         />
       </div>
     </article>

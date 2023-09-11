@@ -1,16 +1,13 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addItem } from "../../redux/slices/basketSlice";
+import { CartItem, addItem } from "../../redux/slices/basketSlice";
 import style from "./ButtonAdd.module.scss";
 import React from "react";
 
 type AppProps = {
-  item: {
-    id: string;
-    count: number;
-  };
+  item: CartItem
 };
 
-const ButtonAdd: React.FC<AppProps> = ({ item }) => {
+const ButtonAdd: React.FC<AppProps> = ({ item } ) => {
   const dispatch = useDispatch();
   const { id } = item;
   const itemCount = useSelector((state) =>
