@@ -9,6 +9,8 @@ export type CartItem = {
   types: number[];
   price: number;
   count: number;
+  activeType?: number;
+  activeSize?: number;
 };
 
 interface CartSliceState {
@@ -16,9 +18,6 @@ interface CartSliceState {
   totalCount: number;
   items: CartItem[];
 }
-
-
-
 
 const initialState: CartSliceState = {
   totalPrice: 0,
@@ -32,7 +31,9 @@ const basketSlise = createSlice({
   reducers: {
     addItem(state, action: PayloadAction<CartItem>) {
       const findItem = state.items.find((obj) => obj.id === action.payload.id);
-      findItem ? findItem.count++ : state.items.push(action.payload);
+      findItem
+        ? findItem.count++
+        : state.items.push({ ...action.payload, count: 1 });
 
       state.totalPrice = state.items.reduce((sum, obj) => {
         return obj.price * obj.count + sum;
@@ -75,5 +76,5 @@ export const selectCart = (state: RootState) => state.basket;
 
 export const { addItem, removeItems, clearItems, minusItem } =
   basketSlise.actions;
-  
+
 export default basketSlise.reducer;

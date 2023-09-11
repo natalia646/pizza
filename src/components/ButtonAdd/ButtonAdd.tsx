@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { CartItem, addItem } from "../../redux/slices/basketSlice";
 import style from "./ButtonAdd.module.scss";
 import React from "react";
+import { RootState } from "../../redux/store";
 
 type AppProps = {
   item: CartItem
@@ -10,7 +11,7 @@ type AppProps = {
 const ButtonAdd: React.FC<AppProps> = ({ item } ) => {
   const dispatch = useDispatch();
   const { id } = item;
-  const itemCount = useSelector((state) =>
+  const itemCount = useSelector((state: RootState) =>
     state.basket.items.find((obj) => obj.id === id)
   );
   const addedCount = itemCount ? itemCount.count : "";

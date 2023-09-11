@@ -24,7 +24,6 @@ const Basket = () => {
       </div>
     );
   }
-  console.log(items)
   return (
     <div>
       <h1>Basket</h1>
@@ -32,7 +31,7 @@ const Basket = () => {
         {items.map((item) => ( 
           <BasketItem
             key={item.id}
-            item = {item}
+             {...item}
           /> 
         ))}
       </div>

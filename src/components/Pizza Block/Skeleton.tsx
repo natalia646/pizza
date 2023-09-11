@@ -1,10 +1,8 @@
 import ContentLoader from "react-content-loader"
 
-type SceletonProps = {
-  props: any
-}
 
-const Skeleton: React.FC <SceletonProps> = (props) => (
+
+const Skeleton: React.FC = () => (
     <ContentLoader 
     className="pazza-article"
     speed={2}
@@ -13,7 +11,7 @@ const Skeleton: React.FC <SceletonProps> = (props) => (
     viewBox="0 0 320 432"
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"
-    {...props}
+   
   >
     <rect x="55" y="274" rx="3" ry="3" width="218" height="82" /> 
     <rect x="59" y="237" rx="3" ry="3" width="212" height="17" /> 

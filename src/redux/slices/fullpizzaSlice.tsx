@@ -6,6 +6,11 @@ type FetchID = {
   id: string;
 };
 
+interface FullSlice {
+  pizza: CartItem, 
+  status: string
+}
+
 export const fetchID = createAsyncThunk<CartItem, FetchID>(
   "full/fetchID",
   async ({ id }) => {
@@ -16,8 +21,8 @@ export const fetchID = createAsyncThunk<CartItem, FetchID>(
   }
 );
 
-const initialState = {
-  pizza: {},
+const initialState: FullSlice= {
+  pizza: {} as CartItem,
   status: "loading",
 };
 
@@ -29,7 +34,7 @@ const fullpizzaSlise = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchID.pending, (state) => {
       state.status = "loading";
-      state.pizza = {};
+      state.pizza = {} as CartItem;
     });
     builder.addCase(fetchID.fulfilled, (state, action) => {
       state.status = "success";
@@ -37,7 +42,7 @@ const fullpizzaSlise = createSlice({
     });
     builder.addCase(fetchID.rejected, (state) => {
       state.status = "error";
-      state.pizza = {};
+      state.pizza = {} as CartItem;
     });
   },
 });

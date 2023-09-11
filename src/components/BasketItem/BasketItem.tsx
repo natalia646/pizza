@@ -7,37 +7,17 @@ import {
   minusItem,
   CartItem,
 } from "../../redux/slices/basketSlice";
+import { useAppDispatch } from "../../redux/store";
 
-import { useDispatch } from "react-redux";
-import { type } from "os";
 
-type CartProps = {
-  activeSize: number;
-  activeType: number;
-  pizzaTypes: string[];
-  pizzaSizes: number[];
-  id: string;
-  title: string;
-  price: number;
-  imageUrl: string;
-  count: number;
-};
 
-const BasketItem: React.FC<CartProps> = ({
-  id,
-  title,
-  price,
-  imageUrl,
-  activeSize,
-  activeType,
-  count,
-}) => {
-  const dispatch = useDispatch();
+const BasketItem: React.FC <CartItem> = ({id, title, imageUrl, price, sizes, types, activeType, activeSize, count }) => {
+
+  const dispatch = useAppDispatch();
 
   const onCklikPlus = () => {
-    
 
-    dispatch(addItem({ id }));
+    dispatch(addItem({ id } as CartItem));
   };
   const onCklikMinus = () => {
     dispatch(minusItem(id));
@@ -55,7 +35,7 @@ const BasketItem: React.FC<CartProps> = ({
       <div className={style.decs}>
         <h2>{title}</h2>
         <p>
-          {pizzaTypes[activeType]}, {pizzaSizes[activeSize]}cm.
+          {/* {pizzaTypes[activeType]}, {pizzaSizes[activeSize]}cm. */}
         </p>
       </div>
       <p>{price} UAN</p>

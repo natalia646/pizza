@@ -2,12 +2,15 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../store";
 import { CartItem } from "./basketSlice";
+import { type } from "os";
 
-type FetchPizzasArgs = {
+export type FetchPizzasArgs = {
   activeIndex: number;
   sortValue: string;
   order: string;
 };
+
+
 
 export const fetchPizzas = createAsyncThunk<CartItem[], FetchPizzasArgs>(
   "pizzas/fetchPizzas",
@@ -18,8 +21,7 @@ export const fetchPizzas = createAsyncThunk<CartItem[], FetchPizzasArgs>(
         params: {
           category: activeIndex > 0 ? activeIndex : "",
           sortBy: sortValue,
-          order,
-          // search: valueSearch,
+          order
         },
       }
     );
