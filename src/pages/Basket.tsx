@@ -36,13 +36,13 @@ const Basket = () => {
         ))}
       </div>
 
-      <div>
+      <div className={style.all_desc}>
         <p>All pizza: {totalCount}</p>
         <p>Amount: {totalPrice} UAN</p>
-        <div>
+        <div className={style.general}>
           <Link to="/pizza">Turn around</Link>
-          <button>Order</button>
-          <button onClick={onClikClear}>Clear basket</button>
+          <button className={style.button}>Order</button>
+          <button className={style.button} onClick={onClikClear}>Clear basket</button>
         </div>
       </div>
     </div>

@@ -29,13 +29,16 @@ const BasketItem: React.FC <CartItem> = ({id, title, imageUrl, price, sizes, typ
   const pizzaTypes = ["thin", "standard"];
   const pizzaSizes = [26, 30, 40];
 
+  // console.log(pizzaSizes[activeSize])
+
   return (
     <div className={style.item}>
       <img src={imageUrl} alt={title} className={style.pizzaImg}></img>
       <div className={style.decs}>
         <h2>{title}</h2>
         <p>
-          {/* {pizzaTypes[activeType]}, {pizzaSizes[activeSize]}cm. */}
+          {activeType? pizzaTypes[activeType]: 0 }, 
+          {activeSize? pizzaSizes[activeSize] : 0}cm.
         </p>
       </div>
       <p>{price} UAN</p>

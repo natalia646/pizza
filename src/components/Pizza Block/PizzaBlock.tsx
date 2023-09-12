@@ -35,8 +35,8 @@ const PizzaBlock: React.FC<CartItem> = ({
     sizes,
     types,
     count,
-    activeType: 0,
-    activeSize: 0
+    activeType,
+    activeSize,
   };
 
   return (
