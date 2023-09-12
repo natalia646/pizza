@@ -21,6 +21,7 @@
   background-color: var(--head-color);
 }
 
+
 .mobile-menu-icon {
   display: none;
 }
@@ -41,20 +42,29 @@
     left: 0;
     top: 220px;
     transition: all 0.1s;
-    width: 25%;
+    width: 40%;
     margin-left: 3.6rem;
   }
-  @media screen and (max-width: 900px) {
+ 
+}
+ @media screen and (max-width: 900px) {
     .open-burger {
-      top: 14.1rem ;
+      top: 11.6rem ;
       margin-left: 1rem;
+    }
+    .categories-list {
+      text-align: center;
+      width: 60%;
+      padding: 12px;
+      transition: all 0.3s ease;
+    }
+    .mobile-menu-icon{
+      width: 70px;
     }
   }
 
-  .categories-list {
-    text-align: center;
-    width: 75%;
-    padding: 12px;
-    transition: all 0.3s ease;
+  @media screen and (max-width: 450px) {
+    .mobile-menu-icon{
+      width: 40px;
+    }
   }
-}
