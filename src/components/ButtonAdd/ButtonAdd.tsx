@@ -5,16 +5,17 @@ import React from "react";
 import { RootState } from "../../redux/store";
 
 type AppProps = {
-  item: CartItem
+  item: CartItem;
 };
 
-const ButtonAdd: React.FC<AppProps> = ({ item } ) => {
+const ButtonAdd: React.FC<AppProps> = ({ item }) => {
   const dispatch = useDispatch();
   const { id } = item;
   const itemCount = useSelector((state: RootState) =>
     state.basket.items.find((obj) => obj.id === id)
   );
   const addedCount = itemCount ? itemCount.count : "";
+
   const onCklikAdd = () => {
     dispatch(addItem(item));
   };

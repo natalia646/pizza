@@ -37,8 +37,8 @@ const BasketItem: React.FC <CartItem> = ({id, title, imageUrl, price, sizes, typ
       <div className={style.decs}>
         <h2>{title}</h2>
         <p>
-          {activeType? pizzaTypes[activeType]: 0 }, 
-          {activeSize? pizzaSizes[activeSize] : 0}cm.
+          {activeType? pizzaTypes[activeType] : pizzaTypes[types[0]] }, 
+          {activeSize? pizzaSizes[activeSize] : sizes[0]}cm.
         </p>
       </div>
       <p>{price} UAN</p>
