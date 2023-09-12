@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-interface FilterSliceState {
+ interface FilterSliceState {
   activeIndex: number;
   sortValue: string;
   order: string;

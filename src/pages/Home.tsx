@@ -24,15 +24,15 @@ const Home = () => {
   const { items, status } = useSelector(selectPizza);
 
   useEffect(() => {
-    dispatch(fetchPizzas({ activeIndex, sortValue, order }));
+    dispatch(fetchPizzas({ activeIndex, sortValue, order, valueSearch }));
   }, [activeIndex, sortValue, valueSearch, order]);
 
-  // useEffect(() => {
-  //   if (window.location.search) {
-  //     const params = qs.parse(window.location.search.substring(1));
-  //       dispatch(setFilter({} as FetchPizzasArgs));
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (window.location.search) {
+      const params = (qs.parse(window.location.search.substring(1)) as unknown) as FetchPizzasArgs;
+        dispatch(setFilter({...params}));
+    }
+  }, []);
 
   useEffect(() => {
     if (isMounted.current) {
