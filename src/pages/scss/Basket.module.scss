@@ -1,10 +1,8 @@
 .items {
   background-color: white;
   border-radius: 10%;
-  margin: 20px 50px 20px 50px;
+  margin: 1px 10px 1px 10px;
   border-radius: 2%;
-  margin-left: 6em;
-  margin-right: 6em;
 }
 .all_desc {
   margin: 10px 30px;
@@ -21,5 +19,13 @@
 }
 .general {
   padding-bottom: 20px;
-
+}
+@media (max-width: 440px) {
+  .general{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 9px;
+  }
 }
