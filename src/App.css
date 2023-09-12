@@ -1,16 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Indie+Flower&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Indie+Flower&display=swap");
 
 :root {
   --head-color: #fadcb6;
   --white-color: #ffffffd5;
   background-color: var(--head-color);
-  /* font-family: 'Indie Flower', cursive; */
-
 }
- .App {
+.App {
   background-color: var(--white-color);
   margin: 10px 100px;
-
-
+}
+@media (max-width: 1570px) {
+  .App {
+    margin: 10px 50px;
+  }
+}
+@media (max-width: 900px) {
+  .App {
+    margin: 8px 5px;
+  }
 }
 

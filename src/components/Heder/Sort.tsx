@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { setSortValue, setOrder } from "../../redux/slices/filterSlice";
 import style from "./HederStyles/Sort.module.scss";
+import styleHome from "../../pages/scss/Home.module.scss"
 
 const Sort = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,8 @@ const Sort = () => {
   };
 
   return (
-    <div className={style.select}>
+    
+    <div className={`${style.select} ${styleHome.boxtwoo}`}>
       Sort by
       <select id="sort" onChange={changeSort}>
         <option value=" "></option>

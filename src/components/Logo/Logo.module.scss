@@ -16,7 +16,9 @@
       @media (max-width: 750px) {
         width: 100px;
       }
-
+      @media screen and (max-width: 550px) {
+        margin-left: 0.5rem;
+      }
     }
   }
 
@@ -31,6 +33,13 @@
     padding-left: 20px;
     padding-right: 57px;
 
+    @media (max-width: 400px) {
+      margin-right: 10px;
+      padding: 4px;
+      padding-left: 10px;
+      padding-right: 57px;
+    }
+
     .totalcount,
     .totalprice {
       display: flex;
@@ -41,21 +50,54 @@
         right: 16.7rem;
         color: black;
         position: absolute;
+        @media screen and (max-width: 1570px) {
+          right: 13.2rem;
+        }
+        @media (max-width: 900px) {
+          right: 10.7rem;
+          font-size: 1rem;
+        }
+        @media (max-width: 400px) {
+          right: 7.7rem;
+        }
       }
       .price {
         right: 12.6rem;
         position: absolute;
         color: black;
+        @media screen and (max-width: 1570px) {
+          right: 9.5rem;
+        }
+        @media (max-width: 900px) {
+          right: 6.7rem;
+          font-size: 1rem;
+        }
+        @media (max-width: 400px) {
+          right: 4rem;
+        }
       }
     }
   }
   img {
     width: 23px;
     padding-right: 25px;
+    @media (max-width: 400px) {
+      width: 17px;
+    }
   }
   h4 {
     color: black;
     position: absolute;
     right: 10.2rem;
+    @media screen and (max-width: 1570px) {
+      right: 7rem;
+    }
+    @media (max-width: 900px) {
+      right: 4.2rem;
+      font-size: 0.8rem;
+    }
+    @media (max-width: 400px) {
+      right: 1.7rem;
+    }
   }
 }

@@ -4,6 +4,7 @@ import { setValueSerch } from "../../redux/slices/filterSlice";
 import style from "../Heder/HederStyles/Search.module.scss";
 import lupa from "../assets/search.svg";
 import Close from "../assets/close.svg";
+import styleHome from "../../pages/scss/Home.module.scss"
 
 type SearchProps = {
   valueSearch: string;
@@ -26,7 +27,7 @@ const Search: React.FC<SearchProps> = ({ valueSearch }) => {
   };
 
   return (
-    <div className={style.root}>
+    <div className= {`${style.root} ${styleHome.boxthree}`}>
       <img src={lupa} className={style.lupa} alt="lupa"></img>
       <input
         placeholder="Search pizza..."

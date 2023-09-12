@@ -1,6 +1,10 @@
-import './HederStyles/Categories.css';
+import "./HederStyles/Categories.css";
 import { useDispatch } from "react-redux";
 import { setActiveIndex } from "../../redux/slices/filterSlice";
+import styleHome from "../../pages/scss/Home.module.scss";
+import { useState } from "react";
+import Close from '.././assets/close-burger-menu.svg'
+import Burger from '.././assets/burger-menu.svg'
 
 const categiries = [
   "All",
@@ -12,18 +16,37 @@ const categiries = [
 ];
 
 type CategoriesProps = {
-  activeIndex: number
-}
+  activeIndex: number;
+};
 
-const Categories: React.FC <CategoriesProps> = ({ activeIndex }) => {
+
+const Categories: React.FC<CategoriesProps> = ({ activeIndex }) => {
   const dispatch = useDispatch();
 
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  const clickCategori = (i:number) => {
+    dispatch(setActiveIndex(i));
+    setIsMobile(false)
+  }
+ 
   return (
-    <div>
-      <ul className="categiries">
+    <div className={styleHome.boxone}>
+      <button
+        className="mobile-menu-icon"
+        onClick={() => setIsMobile(!isMobile)}
+      >{
+        isMobile ? (
+          <img className="burger-icons" src={Close}></img>
+        ) : (
+          <img className="burger-icons" src={Burger}></img>
+        )
+      }</button>
+
+      <ul className= {`categiries  ${isMobile? 'open-burger' : 'close-burger'} `}>
         {categiries.map((categori, i) => (
           <li
-            onClick={() => dispatch(setActiveIndex(i))}
+            onClick={()=>clickCategori(i)}
             key={i}
             className={
               activeIndex === i ? "active categories-list" : "categories-list"

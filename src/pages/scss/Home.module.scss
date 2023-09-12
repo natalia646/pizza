@@ -1,31 +1,85 @@
-  .all_pizza {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      grid-column-gap: 9px;
-      grid-row-gap: 5px;
-      margin-left: 9px;
-      margin-right: 9px;
+.all_pizza {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 9px;
+  grid-row-gap: 5px;
+  margin-left: 9px;
+  margin-right: 9px;
 
-      @media (max-width: 1400px){
-        grid-template-columns: repeat(3, 1fr);
-    
-      }
-      @media (max-width: 1000px){
-        grid-template-columns: repeat(2, 1fr);
-
-      }
-      @media (max-width:750px ){
-        grid-template-columns: repeat(1, 1fr);
-      }
+  @media (max-width: 1400px) {
+    grid-template-columns: repeat(3, 1fr);
   }
-  .categories_block{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 15px;
-
-  
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
+  @media (max-width: 780px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.categories_block {
+  display: grid;
+  grid-template-columns: 3.4fr 1.5fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  padding: 15px;
+}
+
+@media screen and (max-width: 1570px) {
+  .categories_block {
+    display: grid;
+    grid-template-columns: 4.7fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 17px;
+  }
+  .boxone {
+    grid-area: 1 / 1 / 2 / 2;
+    padding-left: 15px;
+  }
+  .boxtwoo {
+    grid-area: 2 / 1 / 3 / 2;
+    padding-left: 30px;
+  }
+  .boxthree {
+    grid-area: 1 / 2 / 2 / 3;
+    padding: 2px;
+  }
+}
+@media screen and (max-width: 1135px) {
+  .categories_block {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 17px;
+    grid-row-gap: 15px;
+  }
+  .boxone {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .boxtwoo {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .boxthree {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+}
+@media screen and (max-width: 780px) {
+  .categories_block {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 1px;
+    grid-row-gap: 9px;
+  }
+  .boxone {
+    grid-area: 1 / 1 / 2 / 2; 
+  }
+  .boxtwoo {
+    grid-area: 2 / 1 / 3 / 3;
+  }
+  .boxthree {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+}
