@@ -14,8 +14,8 @@ import { selectFilter, setFilter } from "../redux/slices/filterSlice";
 import {
   fetchPizzas,
   selectPizza,
-  FetchPizzasArgs,
 } from "../redux/slices/pizzasSlice";
+import { FetchPizzasArgs } from "../redux/slices/types/types";
 
 const Home = () => {
   const navigate = useNavigate();

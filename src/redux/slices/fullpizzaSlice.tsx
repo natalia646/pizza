@@ -1,15 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { CartItem } from "./basketSlice";
+import { CartItem, FullDescSlice } from "./types/types";
 
 type FetchID = {
   id: string;
 };
-
-interface FullSlice {
-  pizza: CartItem, 
-  status: string
-}
 
 export const fetchID = createAsyncThunk<CartItem, FetchID>(
   "full/fetchID",
@@ -21,7 +16,7 @@ export const fetchID = createAsyncThunk<CartItem, FetchID>(
   }
 );
 
-const initialState: FullSlice= {
+const initialState: FullDescSlice= {
   pizza: {} as CartItem,
   status: "loading",
 };

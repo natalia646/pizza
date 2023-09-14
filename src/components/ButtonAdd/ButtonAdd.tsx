@@ -1,8 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
-import { CartItem, addItem } from "../../redux/slices/basketSlice";
+import { addItem } from "../../redux/slices/basketSlice";
 import style from "./ButtonAdd.module.scss";
 import React from "react";
 import { RootState } from "../../redux/store";
+import { CartItem } from "../../redux/slices/types/types";
+
 
 type AppProps = {
   item: CartItem;

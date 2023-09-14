@@ -3,7 +3,7 @@ import style from "./PizzaBlock.module.scss";
 import { Link } from "react-router-dom";
 import ButtonAdd from "../ButtonAdd/ButtonAdd";
 import TypeSize from "../TypeSize/TypeSize";
-import { CartItem } from "../../redux/slices/basketSlice";
+import { CartItem } from "../../redux/slices/types/types";
 
 // type PizzaProps = {
 //   id: string;

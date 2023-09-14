@@ -5,9 +5,9 @@ import {
   addItem,
   removeItems,
   minusItem,
-  CartItem,
 } from "../../redux/slices/basketSlice";
 import { useAppDispatch } from "../../redux/store";
+import { CartItem } from "../../redux/slices/types/types";
 
 
 

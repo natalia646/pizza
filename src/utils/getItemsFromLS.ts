@@ -1,4 +1,4 @@
-import { CartItem } from "../redux/slices/basketSlice";
+import { CartItem } from "../redux/slices/types/types";
 import { getTotalCount } from "./getTotalCount";
 import { getTotalPrice } from "./getTotalPrice";
 

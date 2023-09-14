@@ -1,14 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import { FetchPizzasArgs } from "./types/types";
 
- interface FilterSliceState {
-  activeIndex: number;
-  sortValue: string;
-  order: string;
-  valueSearch: string;
-}
 
-const initialState : FilterSliceState = {
+
+const initialState : FetchPizzasArgs = {
   activeIndex: 0,
   sortValue: "",
   order: "",
@@ -31,7 +27,7 @@ const filterSlice = createSlice({
     setValueSerch(state, action:PayloadAction<string>) {
       state.valueSearch = action.payload;
     },
-    setFilter(state, action: PayloadAction<FilterSliceState>) {
+    setFilter(state, action: PayloadAction<FetchPizzasArgs>) {
       state.activeIndex = Number(action.payload.activeIndex);
       state.sortValue = action.payload.sortValue;
       state.order = action.payload.order;
