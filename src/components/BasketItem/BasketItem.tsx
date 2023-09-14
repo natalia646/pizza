@@ -42,9 +42,9 @@ const BasketItem: React.FC <CartItem> = ({id, title, imageUrl, price, sizes, typ
       </div>
       <p className={style.price}>{price} UAN</p>
       <div className={style.buttonsAddMinus}>
-        <button onClick={onCklikPlus}>+</button>
+        <button disabled = {count === 1} onClick={onCklikMinus}>-</button>
         <span>{count}</span>
-        <button onClick={onCklikMinus}>-</button>
+        <button  onClick={onCklikPlus}>+</button>
       </div>
       <h3 className={style.suma}>{price * count} UAN</h3>
       <img
