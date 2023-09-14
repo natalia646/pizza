@@ -5,14 +5,6 @@ import ButtonAdd from "../ButtonAdd/ButtonAdd";
 import TypeSize from "../TypeSize/TypeSize";
 import { CartItem } from "../../redux/slices/types/types";
 
-// type PizzaProps = {
-//   id: string;
-//   title: string;
-//   imageUrl: string;
-//   sizes: number[];
-//   types: number[];
-//   price: number;
-// };
 
 const PizzaBlock: React.FC<CartItem> = ({
   id,

@@ -11,8 +11,7 @@ const categiries = [
   "Mead",
   "Chicken",
   "Vegetarian",
-  "Grensive",
-  "Sharp",
+  "Spicy",
 ];
 
 type CategoriesProps = {
