@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import { useDispatch } from "react-redux";
 import { setValueSerch } from "../../redux/slices/filterSlice";
 import style from "../Heder/HederStyles/Search.module.scss";
@@ -10,7 +10,7 @@ type SearchProps = {
   valueSearch: string;
 };
 
-const Search: React.FC<SearchProps> = ({ valueSearch }) => {
+const Search: React.FC<SearchProps> = memo(({ valueSearch }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const dispatch = useDispatch();
 
@@ -44,6 +44,6 @@ const Search: React.FC<SearchProps> = ({ valueSearch }) => {
       )}
     </div>
   );
-};
+});
 
 export default Search;

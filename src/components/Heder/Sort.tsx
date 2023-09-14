@@ -3,8 +3,9 @@ import { useDispatch } from "react-redux";
 import { setSortValue, setOrder } from "../../redux/slices/filterSlice";
 import style from "./HederStyles/Sort.module.scss";
 import styleHome from "../../pages/scss/Home.module.scss"
+import { memo } from "react";
 
-const Sort = () => {
+const Sort = memo(() => {
   const dispatch = useDispatch();
 
 
@@ -33,6 +34,6 @@ const Sort = () => {
       </select>
     </div>
   );
-};
+});
 
 export default Sort;

@@ -46,6 +46,7 @@ const Home = () => {
     isMounted.current = true;
   }, [activeIndex, sortValue, order]);
 
+
   return (
     <main>
       <div className={style.categories_block}>

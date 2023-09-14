@@ -32,6 +32,10 @@
       padding: 5px;
       background-color: bisque;
       border-radius: 30%;
+      cursor: pointer;
+      &:disabled{
+        cursor: default;
+      }
     }
   }
   .close {

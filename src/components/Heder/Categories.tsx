@@ -2,9 +2,9 @@ import "./HederStyles/Categories.css";
 import { useDispatch } from "react-redux";
 import { setActiveIndex } from "../../redux/slices/filterSlice";
 import styleHome from "../../pages/scss/Home.module.scss";
-import { useState } from "react";
-import Close from '.././assets/close-burger-menu.svg'
-import Burger from '.././assets/burger-menu.svg'
+import { useCallback, useState, memo } from "react";
+import Close from ".././assets/close-burger-menu.svg";
+import Burger from ".././assets/burger-menu.svg";
 
 const categiries = [
   "All",
@@ -19,34 +19,40 @@ type CategoriesProps = {
   activeIndex: number;
 };
 
-
-const Categories: React.FC<CategoriesProps> = ({ activeIndex }) => {
+const Categories: React.FC<CategoriesProps> = memo(({ activeIndex }) => {
   const dispatch = useDispatch();
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
-  const clickCategori = (i:number) => {
+  const clickCategori = useCallback((i: number) => {
     dispatch(setActiveIndex(i));
-    setIsMobile(false)
-  }
- 
+    setIsMobile(false);
+  }, []);
+
+  // const clickCategori = (i:number) => {
+  //   dispatch(setActiveIndex(i));
+  //   setIsMobile(false)
+  // }
+
   return (
     <div className={styleHome.boxone}>
       <button
         className="mobile-menu-icon"
         onClick={() => setIsMobile(!isMobile)}
-      >{
-        isMobile ? (
+      >
+        {isMobile ? (
           <img className="burger-icons" src={Close}></img>
         ) : (
           <img className="burger-icons" src={Burger}></img>
-        )
-      }</button>
+        )}
+      </button>
 
-      <ul className= {`categiries  ${isMobile? 'open-burger' : 'close-burger'} `}>
+      <ul
+        className={`categiries  ${isMobile ? "open-burger" : "close-burger"} `}
+      >
         {categiries.map((categori, i) => (
           <li
-            onClick={()=>clickCategori(i)}
+            onClick={() => clickCategori(i)}
             key={i}
             className={
               activeIndex === i ? "active categories-list" : "categories-list"
@@ -58,6 +64,6 @@ const Categories: React.FC<CategoriesProps> = ({ activeIndex }) => {
       </ul>
     </div>
   );
-};
+});
 
 export default Categories;
