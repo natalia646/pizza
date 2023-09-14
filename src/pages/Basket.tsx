@@ -7,7 +7,7 @@ import Empty from "../components/EmptyBasket/Empty";
 
 
 
-const Basket = () => {
+const Basket: React.FC = () => {
 
   const dispatch = useDispatch();
   const basketItems = useSelector(selectCart);

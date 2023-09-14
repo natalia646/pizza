@@ -11,7 +11,11 @@ import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "../redux/store";
 import { selectFilter, setFilter } from "../redux/slices/filterSlice";
-import { fetchPizzas, selectPizza,  FetchPizzasArgs} from "../redux/slices/pizzasSlice";
+import {
+  fetchPizzas,
+  selectPizza,
+  FetchPizzasArgs,
+} from "../redux/slices/pizzasSlice";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -29,8 +33,10 @@ const Home = () => {
 
   useEffect(() => {
     if (window.location.search) {
-      const params = (qs.parse(window.location.search.substring(1)) as unknown) as FetchPizzasArgs;
-        dispatch(setFilter({...params}));
+      const params = qs.parse(
+        window.location.search.substring(1)
+      ) as unknown as FetchPizzasArgs;
+      dispatch(setFilter({ ...params }));
     }
   }, []);
 
@@ -45,7 +51,6 @@ const Home = () => {
     }
     isMounted.current = true;
   }, [activeIndex, sortValue, order]);
-
 
   return (
     <main>

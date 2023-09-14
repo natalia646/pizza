@@ -4,6 +4,7 @@ import { RootState } from "../store";
 import { CartItem } from "./basketSlice";
 
 
+
 export type FetchPizzasArgs = {
   activeIndex: number;
   sortValue: string;
