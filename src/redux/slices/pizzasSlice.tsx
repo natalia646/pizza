@@ -2,11 +2,12 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../store";
 import { CartItem, FetchPizzasArgs } from "./types/types";
+import { type } from "os";
 
 
 export const fetchPizzas = createAsyncThunk<CartItem[], FetchPizzasArgs>(
   "pizzas/fetchPizzas",
-  async ({ activeIndex, sortValue, order, valueSearch }) => {
+  async ({ activeIndex, sortValue, order}) => {
     const { data } = await axios.get<CartItem[]>(
       "https://64ca66e8700d50e3c704da5c.mockapi.io/api/va/items",
       {
@@ -14,13 +15,16 @@ export const fetchPizzas = createAsyncThunk<CartItem[], FetchPizzasArgs>(
           category: activeIndex > 0 ? activeIndex : "",
           sortBy: sortValue,
           order, 
-          search: valueSearch
+          // search: valueSearch
         },
       }
     );
     return data;
   }
 );
+
+
+
 
 interface PizzaSliceState {
   items: CartItem[];

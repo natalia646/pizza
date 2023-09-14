@@ -22,8 +22,10 @@ const Home = () => {
   const dispatch = useAppDispatch();
   const isMounted = useRef(false);
 
-  const { activeIndex, sortValue, order, valueSearch } =
+  const { activeIndex, sortValue, order,valueSearch} =
     useSelector(selectFilter);
+  
+
 
   const { items, status } = useSelector(selectPizza);
 

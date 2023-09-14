@@ -1,8 +1,9 @@
 .sizes_types {
-    background-color: gainsboro;
+    background-color: rgba(131, 164, 167, 0.318);
     border-radius: 5%;
-    min-width: 200px;
-    margin: 0.4em;
+    min-width: 70%;
+    margin-bottom: 0.3em;
+    padding: 5px;
   }
   ul {
     display: flex;
@@ -12,11 +13,10 @@
     margin: 0.01em;
     li {
       list-style-type: none;
-      border: 1px solid white;
+      border: 1.7px solid white;
       padding: 0.2em;
-      margin: 0.5em;
-      border-radius: 12%;
-      min-width: 50px;
+      margin: 0.2em;
+      width: 100%;
       text-align: center;
       cursor: pointer;
       text-decoration: none;

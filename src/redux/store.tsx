@@ -5,6 +5,7 @@ import basket from "./slices/basketSlice";
 import pizzas from "./slices/pizzasSlice";
 import fullpizza from "./slices/fullpizzaSlice";
 
+
 export const store = configureStore({
   reducer: {
     filter,
