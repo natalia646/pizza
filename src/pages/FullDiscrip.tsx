@@ -28,7 +28,6 @@ const FullDiscrip = () => {
       <div className={style.desc}>
         <div className={style.image}>
           <img className={style.img} src={pizza.imageUrl} />
-          <h3>{pizza.price} UAH</h3>
           <TypeSize
             types={pizza.types}
             activeType={activeType}
@@ -37,11 +36,20 @@ const FullDiscrip = () => {
             activeSize={activeSize}
             setActiveSize={setActiveSize}
           />
-          <ButtonAdd item={{ ...pizza, count: 1, activeSize, activeType }} />
+
+          <h3>{pizza.price} UAH</h3>
+          <div className={style.buttonAdd}>
+            <ButtonAdd item={{ ...pizza, count: 1, activeSize, activeType }} />
+          </div>
         </div>
         <div className={style.text}>
           <h2>{pizza.title}</h2>
-          <p>Lorem ipson </p>
+          <ol>
+            <li>sausages </li>
+            <li> mushrooms</li>
+            <li> bacon </li>
+            <li> tomato </li>
+          </ol>
         </div>
       </div>
     );

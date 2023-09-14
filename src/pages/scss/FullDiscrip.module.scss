@@ -4,22 +4,44 @@
 }
 
 .image {
-display: flex;
-justify-content: center;
-align-items: flex-start;
-flex-direction: column;
-margin: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
 
+  @media screen and (max-width: 850px) {
+    width: 350px;
+    margin: 6px;
+  }
+  @media screen and (max-width: 540px) {
+    width: 200px;
+    margin: 6px;
+  }
 
   .img {
     width: 250px;
     border-radius: 50%;
     margin: 30px 70px;
+    @media screen and (max-width: 850px) {
+      width: 200px;
+    }
+    @media screen and (max-width: 540px) {
+      width: 150px;
+    margin: 10px 20px;
+
+    }
   }
   .buttonAdd {
-    width: 70px;
-    height: 30px;
-    border-radius: 10%;
-    background-color: var(--head-color);
+    display: flex;
+  }
+}
+.text {
+  margin-left: 10%;
+  @media screen and (max-width: 850px) {
+    // width: 350px;
+    margin-left: 6px;
+  }
+  @media screen and (max-width: 540px) {
+    // width: 350px;
+    margin-left: 3px;
   }
 }
